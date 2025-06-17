@@ -16185,3 +16185,546 @@ th {
 }
 
 
+/* ---------------------- new navbar ------------------------------- */
+
+ /* Reset and Base Styles */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 2: TOP STRIP STYLES */
+.klimas-top-strip {
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c);
+    color: #ffffff;
+    padding: 12px 0;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.klimas-top-strip-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.klimas-contact-info {
+    display: flex;
+    gap: 40px;
+}
+
+.klimas-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-weight: 400;
+}
+
+.klimas-contact-item:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 3: MAIN HEADER STYLES */
+.klimas-main-header {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: fixed;
+    top: 38px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.klimas-header-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.klimas-logo {
+    display: flex;
+    align-items: center;
+}
+
+.klimas-logo-img {
+    max-height: 90px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.klimas-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.klimas-header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.klimas-anniversary-badge {
+    background: linear-gradient(45deg, #e41e24, #b5141c);
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.klimas-anniversary-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(228, 30, 36, 0.3);
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 4: LEFT SIDEBAR CORE STYLES */
+.klimas-left-sidebar {
+    position: fixed;
+    left: 0;
+    top: 108px;
+    width: 80px;
+    height: calc(100vh - 108px);
+    background: #ffffff;
+    border-right: 1px solid #e5e5e5;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    overflow: visible;
+}
+
+.klimas-left-sidebar:hover {
+    width: 300px;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.klimas-sidebar-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+    position: relative;
+}
+
+.klimas-sidebar-logo {
+    display: none;
+    font-size: 28px;
+    font-weight: 700;
+    color: #e41e24;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.klimas-left-sidebar:hover .klimas-sidebar-logo {
+    display: block;
+}
+
+.klimas-menu-icon {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.klimas-menu-icon span {
+    width: 100%;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(9px, 9px);
+}
+
+.klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(9px, -9px);
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 5: NAVIGATION MENU STYLES */
+.klimas-nav-menu {
+    padding: 30px 0;
+}
+
+.klimas-nav-item {
+    position: relative;
+    margin: 4px 0;
+}
+
+.klimas-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 0 8px 8px 0;
+}
+
+.klimas-nav-link:hover {
+    background: #e41e24;
+    color: #ffffff;
+    border-left: 4px solid #b5141c;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.klimas-nav-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.klimas-nav-text {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.klimas-left-sidebar:hover .klimas-nav-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.klimas-nav-arrow {
+    margin-left: auto;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+    width: 14px;
+    height: 14px;
+}
+
+.klimas-left-sidebar:hover .klimas-nav-arrow {
+    opacity: 1;
+}
+
+.klimas-nav-item.klimas-has-submenu:hover .klimas-nav-arrow {
+    transform: rotate(90deg);
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 6: SUBMENU STYLES */
+.klimas-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 320px;
+    background: #ffffff;
+    box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+    border-radius: 0 12px 12px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.klimas-nav-item:hover .klimas-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.klimas-submenu-header {
+    padding: 20px 30px;
+    background: linear-gradient(90deg, #e41e24, #b5141c);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    border-radius: 0 12px 0 0;
+    text-transform: uppercase;
+}
+
+.klimas-submenu-item {
+    display: block;
+    padding: 16px 30px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.klimas-submenu-item:hover {
+    background: linear-gradient(90deg, #f8f8f8, #ffffff);
+    color: #e41e24;
+    padding-left: 35px;
+    border-left: 4px solid #e41e24;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.klimas-submenu-item:last-child {
+    border-bottom: none;
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 7: CUSTOMER SERVICE BUTTON */
+.klimas-customer-service {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(45deg, #e41e24, #b5141c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(228, 30, 36, 0.4);
+}
+
+.klimas-customer-service:hover {
+    transform: translateX(-50%) scale(1.15);
+    box-shadow: 0 10px 30px rgba(228, 30, 36, 0.5);
+}
+
+.klimas-customer-service svg {
+    width: 30px;
+    height: 30px;
+    fill: #ffffff;
+}
+
+.klimas-service-text {
+    position: absolute;
+    left: 85px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(45deg, #e41e24, #b5141c);
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.klimas-left-sidebar:hover .klimas-service-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 8: MOBILE MENU STYLES */
+.klimas-mobile-menu-btn {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 1003;
+    background: linear-gradient(45deg, #e41e24, #b5141c);
+    color: #ffffff;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(228, 30, 36, 0.4);
+    transition: all 0.3s ease;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.klimas-mobile-menu-btn.klimas-active {
+    background: linear-gradient(45deg, #333, #4a4a4a);
+}
+
+.klimas-mobile-menu-btn.klimas-active #klimasMenuIcon {
+    font-size: 26px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.klimas-mobile-menu-btn:hover {
+    transform: scale(1.1);
+}
+
+.klimas-mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.klimas-mobile-overlay.klimas-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* KLIMAS SIDEBAR CSS - SECTION 10: RESPONSIVE STYLES */
+@media (max-width: 768px) {
+    .klimas-top-strip {
+        display: none;
+    }
+
+    .klimas-main-header {
+        top: 0;
+    }
+
+    .klimas-mobile-menu-btn {
+        display: flex;
+    }
+
+    .klimas-header-content {
+        padding: 0 15px;
+    }
+
+    .klimas-logo-img {
+        max-height: 70px;
+    }
+
+    .klimas-anniversary-badge {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .klimas-left-sidebar {
+        transform: translateX(-100%);
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        position: fixed;
+    }
+
+    .klimas-left-sidebar:hover {
+        width: 300px;
+    }
+
+    .klimas-left-sidebar.klimas-mobile-open {
+        transform: translateX(0);
+    }
+
+    .klimas-left-sidebar.klimas-mobile-open .klimas-nav-text,
+    .klimas-left-sidebar.klimas-mobile-open .klimas-nav-arrow,
+    .klimas-left-sidebar.klimas-mobile-open .klimas-service-text {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    .klimas-left-sidebar .klimas-menu-icon {
+        display: none;
+    }
+
+    .klimas-left-sidebar .klimas-sidebar-logo {
+        display: block;
+    }
+
+    .klimas-submenu {
+        position: static;
+        width: 100%;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        border-radius: 0;
+    }
+
+    .klimas-nav-item.klimas-active .klimas-submenu {
+        max-height: 600px;
+    }
+
+    .klimas-submenu-header {
+        background: linear-gradient(90deg, #e41e24, #b5141c);
+        color: #ffffff;
+        padding: 20px 25px;
+        font-size: 16px;
+    }
+
+    .klimas-submenu-item {
+        padding: 14px 25px;
+        font-size: 14px;
+    }
+
+    .klimas-submenu-item:hover {
+        padding-left: 30px;
+    }
+
+    .klimas-container.klimas-mobile-menu-open {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 769px) {
+    .klimas-mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .klimas-header-content {
+        padding: 0 10px;
+    }
+
+    .klimas-logo-img {
+        max-height: 60px;
+    }
+
+    .klimas-anniversary-badge {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .klimas-mobile-menu-btn {
+        width: 50px;
+        height: 50px;
+        top: 70px;
+        left: 15px;
+        font-size: 22px;
+    }
+}
