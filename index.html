@@ -169,243 +169,446 @@ Best Laser Cutting Machine Supplier, Galvanized Coil, PPGI Coil, prepainted galv
 			<!-- Font Awesome -->
 			<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+				rel="stylesheet">
 
 
 			<!-- main header -->
-			
+
 			<!-- main header END -->
 		</header>
 		<!-- header -->
 
 
-<!-- ------------------ new navbar ---------------------- -->
 
-<div class="klimas-container" id="klimasContainer">
-	<!-- Mobile Menu Button -->
-	<button class="klimas-mobile-menu-btn" id="klimasMobileMenuBtn" onclick="klimasToggleMobileMenu()">
-		<span id="klimasMenuIcon">☰</span>
-	</button>
 
-	<!-- Mobile Overlay -->
-	<div class="klimas-mobile-overlay" onclick="klimasCloseMobileMenu()"></div>
 
-	<!-- Top Info Strip -->
-	<div class="klimas-top-strip">
-		<div class="klimas-top-strip-content">
-			<div class="klimas-contact-info">
-				<div class="klimas-contact-item">
-					📍 123 Business Street, City, State 12345
-				</div>
-				<div class="klimas-contact-item">
-					📞 +1 (555) 123-4567
-				</div>
-				<div class="klimas-contact-item">
-					✉️ info@klimas.com
-				</div>
+
+		<!-- ------------------ new navbar ---------------------- -->
+
+		<!-- Header -->
+		<header class="header">
+			<div class="logo">
+				<img src="images/eec3.png" alt="Logo">
 			</div>
-		</div>
-	</div>
+			<div class="header-right">
+				<a href="contact.html" class="header-btn" style="color: white; text-decoration: none;">Get in Touch</a>
+				<div class="hamburger fas fa-bars"></div>
+			</div>
+		</header>
 
-	<!-- Main Header -->
-	<header class="klimas-main-header">
-		<div class="klimas-header-content">
-			<div class="klimas-logo">
-				<img src="./images/eec3.png" alt="KLIMAS Logo" class="klimas-logo-img">
+		<!-- Sidebar -->
+		<nav class="sidebar">
+			<div class="sidebar-logo-strip">
+				<i class="fas fa-globe"></i>
+				<i class="fas fa-box"></i>
+				<i class="fas fa-lightbulb"></i>
+				<i class="fas fa-book"></i>
+				<i class="fas fa-info-circle"></i>
+				<i class="fas fa-envelope"></i>
+				<i class="fas fa-shopping-cart"></i>
+				<i class="fas fa-headset"></i>
 			</div>
-			<div class="klimas-header-right">
-				<div class="klimas-anniversary-badge">35 YEARS</div>
-			</div>
-		</div>
-	</header>
-
-	<!-- Left Sidebar Navigation -->
-	<nav class="klimas-left-sidebar" id="klimasLeftSidebar">
-		<div class="klimas-sidebar-header">
-			<div class="klimas-menu-icon">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<div class="klimas-sidebar-logo"></div>
-		</div>
-		
-		<div class="klimas-nav-menu">
-			<div class="klimas-nav-item">
-				<a href="#" class="klimas-nav-link">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-					</svg>
-					<span class="klimas-nav-text">Home</span>
-				</a>
+			<div class="language-selector">
+				<i class="fas fa-globe"></i>
+				<select id="language-select">
+					<option value="en">English</option>
+					<option value="es">Spanish</option>
+					<option value="de">German</option>
+					<option value="it">Italian</option>
+					<option value="ar">Arabic</option>
+					<option value="zh-CN">Chinese</option>
+					<option value="ja">Japanese</option>
+				</select>
 			</div>
 
-			<div class="klimas-nav-item klimas-has-submenu">
-				<a href="#" class="klimas-nav-link" onclick="klimasToggleSubmenu(event, this)">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-					</svg>
-					<span class="klimas-nav-text">Products</span>
-					<svg class="klimas-nav-arrow" viewBox="0 0 24 24">
-						<path d="M9 18l6-6-6-6v12z" fill="currentColor"/>
-					</svg>
-				</a>
-				<div class="klimas-submenu">
-					<div class="klimas-submenu-header">Product Categories</div>
-					<a href="#" class="klimas-submenu-item">Thermal Insulation Systems</a>
-					<a href="#" class="klimas-submenu-item">Mechanical & Chemical Anchors</a>
-					<a href="#" class="klimas-submenu-item">Frame Fixings</a>
-					<a href="#" class="klimas-submenu-item">Wood Construction Fasteners</a>
-					<a href="#" class="klimas-submenu-item">Roof & Wall Cladding Systems</a>
-					<a href="#" class="klimas-submenu-item">Flat Roof Insulation Fasteners</a>
+			<div class="sidebar-item has-submenu" data-submenu="About">
+				<a href="#" class="sidebar-link"><i class="fas fa-info-circle"></i> About Us</a>
+				<div class="submenu">
+					<a href="#" class="submenu-item">Management</a>
+					<a href="#" class="submenu-item">Certificate</a>
+
 				</div>
 			</div>
 
-			<div class="klimas-nav-item klimas-has-submenu">
-				<a href="#" class="klimas-nav-link" onclick="klimasToggleSubmenu(event, this)">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-					</svg>
-					<span class="klimas-nav-text">Solutions</span>
-					<svg class="klimas-nav-arrow" viewBox="0 0 24 24">
-						<path d="M9 18l6-6-6-6v12z" fill="currentColor"/>
-					</svg>
-				</a>
-				<div class="klimas-submenu">
-					<div class="klimas-submenu-header">Our Solutions</div>
-					<a href="#" class="klimas-submenu-item">Construction Solutions</a>
-					<a href="#" class="klimas-submenu-item">Industrial Applications</a>
-					<a href="#" class="klimas-submenu-item">Specialized Systems</a>
-					<a href="#" class="klimas-submenu-item">Custom Solutions</a>
+			<a href="#" class="sidebar-item"><i class="fas fa-map-marker-alt"></i>Location</a>
+
+			<a href="#" class="sidebar-item"><i class="fas fa-user"></i> Our Client</a>
+
+
+
+
+			<div class="sidebar-item has-submenu" data-submenu="products">
+				<a href="#" class="sidebar-link"><i class="fas fa-box"></i> Products</a>
+				<div class="submenu">
+
+					<div class="submenu-item has-sub-submenu" data-sub-submenu="category-a">
+						<a href="#" class="submenu-item-link">Galvanized</a>
+						<div class="sub-submenu">
+							<a href="#" class="sub-submenu-item">Galvanized-Coil</a>
+							<a href="#" class="sub-submenu-item">Galvanized-Corrugated-Sheet</a>
+							<a href="#" class="sub-submenu-item">Pre-Painted-Galvanized-sheet</a>
+						</div>
+					</div>
+
+					<div class="submenu-item has-sub-submenu" data-sub-submenu="category-b">
+						<a href="#" class="submenu-item-link">Manufacturing Material</a>
+						<div class="sub-submenu">
+							<a href="#" class="sub-submenu-item">Composting-Machine</a>
+							<a href="#" class="sub-submenu-item">Stainless-Steel-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ms-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ms-Structure-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ms-Base-Frame-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ms-Tank-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ms-Compact-Fabrication</a>
+							<a href="#" class="sub-submenu-item">Ss-Tank-Fabrication</a>
+						</div>
+					</div>
+
+					<div class="submenu-item has-sub-submenu" data-sub-submenu="category-c">
+						<a href="#" class="submenu-item-link">Laser Cutting</a>
+						<div class="sub-submenu">
+							<a href="#" class="sub-submenu-item">Ms-Laser-Cutting</a>
+							<a href="#" class="sub-submenu-item">Ms-Laser-Cutting</a>
+							<a href="#" class="sub-submenu-item">Laser-Cutting</a>
+						</div>
+					</div>
+
+					<a href="#" class="submenu-item">Feature Products</a>
 				</div>
 			</div>
 
-			<div class="klimas-nav-item">
-				<a href="#" class="klimas-nav-link">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-					</svg>
-					<span class="klimas-nav-text">Applications</span>
-				</a>
+			<div class="sidebar-item has-submenu" data-submenu="solutions">
+				<a href="#" class="sidebar-link"><i class="fas fa-image"></i>Gallery</a>
+				<div class="submenu">
+					<a href="#" class="submenu-item">Image Gallery</a>
+					<a href="#" class="submenu-item">Video Gallery</a>
+				</div>
 			</div>
 
-			<div class="klimas-nav-item">
-				<a href="#" class="klimas-nav-link">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-					</svg>
-					<span class="klimas-nav-text">Locations</span>
-				</a>
+
+			<a href="#" class="sidebar-item"><i class="fas fa-briefcase"></i>Career</a>
+			<!-- <a href="#" class="sidebar-item"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="#" class="sidebar-item"><i class="fas fa-shopping-cart"></i> Order Online</a>  -->
+			<a href="#" class="sidebar-item customer-service"><i class="fas fa-headset"></i> Customer Service</a>
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-whatsapp"></i></a>
+				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-youtube"></i></a>
 			</div>
+		</nav>
 
-			<div class="klimas-nav-item">
-				<a href="#" class="klimas-nav-link">
-					<svg class="klimas-nav-icon" viewBox="0 0 24 24">
-						<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-					</svg>
-					<span class="klimas-nav-text">Contact</span>
-				</a>
-			</div>
-		</div>
+		<!-- Secondary Sidebars -->
 
-		<!-- Customer Service Button -->
-		<!-- <div class="klimas-customer-service">
-			<svg viewBox="0 0 24 24">
-				<path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-			</svg>
-			<span class="klimas-service-text">Customer Service</span>
-		</div> -->
-	</nav>
-</div>
+		<nav class="secondary-sidebar" id="About">
+			<a href="#" class="secondary-sidebar-item">Management</a>
+			<a href="#" class="secondary-sidebar-item">Certificate</a>
+		</nav>
 
-<script>
-	// KLIMAS Sidebar JavaScript Functions
-	function klimasToggleMobileMenu() {
-		const sidebar = document.getElementById('klimasLeftSidebar');
-		const overlay = document.querySelector('.klimas-mobile-overlay');
-		const menuBtn = document.getElementById('klimasMobileMenuBtn');
-		const menuIcon = document.getElementById('klimasMenuIcon');
-		const container = document.getElementById('klimasContainer');
+		<nav class="secondary-sidebar" id="products">
+			<a href="#" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-a">Galvanized</a>
+			<a href="#" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-b">Manufacturing
+				Material</a>
+			<a href="#" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-c">Laser Cutting</a>
+			<a href="#" class="secondary-sidebar-item">Feature Products</a>
+		</nav>
 
-		sidebar.classList.toggle('klimas-mobile-open');
-		overlay.classList.toggle('klimas-active');
-		menuBtn.classList.toggle('klimas-active');
-		container.classList.toggle('klimas-mobile-menu-open');
+		<nav class="secondary-sidebar" id="solutions">
+			<a href="#" class="secondary-sidebar-item">Image Gallery</a>
+			<a href="#" class="secondary-sidebar-item"> Video Gallery</a>
+		</nav>
 
-		menuIcon.innerHTML = sidebar.classList.contains('klimas-mobile-open') ? '✕' : '☰';
-	}
+		<!-- Tertiary Sidebar -->
+		<nav class="tertiary-sidebar" id="category-a">
+			<a href="#" class="tertiary-sidebar-item">Galvanized-Coil</a>
+			<a href="#" class="tertiary-sidebar-item">Galvanized-Corrugated-Sheet</a>
+			<a href="#" class="tertiary-sidebar-item">Pre-Painted-Galvanized-Sheet</a>
+		</nav>
 
-	function klimasCloseMobileMenu() {
-		const sidebar = document.getElementById('klimasLeftSidebar');
-		const overlay = document.querySelector('.klimas-mobile-overlay');
-		const menuBtn = document.getElementById('klimasMobileMenuBtn');
-		const menuIcon = document.getElementById('klimasMenuIcon');
-		const container = document.getElementById('klimasContainer');
+		<nav class="tertiary-sidebar" id="category-b">
+			<a href="#" class="tertiary-sidebar-item">Composting-Machine</a>
+			<a href="#" class="tertiary-sidebar-item">Stainless-Steel-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Structure-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Base-Frame-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Tank-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Compact-Fabrication</a>
+			<a href="#" class="tertiary-sidebar-item">Ss-Tank-Fabrication</a>
+		</nav>
 
-		sidebar.classList.remove('klimas-mobile-open');
-		overlay.classList.remove('klimas-active');
-		menuBtn.classList.remove('klimas-active');
-		container.classList.remove('klimas-mobile-menu-open');
-		menuIcon.innerHTML = '☰';
+		<nav class="tertiary-sidebar" id="category-c">
+			<a href="#" class="tertiary-sidebar-item">Ms-Laser-Cutting</a>
+			<a href="#" class="tertiary-sidebar-item">Ms-Laser-Cutting</a>
+			<a href="#" class="tertiary-sidebar-item">Laser-Cutting</a>
+		</nav>
+		<!-- Google Translate Element -->
+		<div id="google_translate_element" style="display: none;"></div>
 
-		document.querySelectorAll('.klimas-nav-item.klimas-active').forEach(item => {
-			item.classList.remove('klimas-active');
-		});
-	}
+		<script>
+			// Font Awesome for icons
+			const fontAwesome = document.createElement('link');
+			fontAwesome.rel = 'stylesheet';
+			fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+			document.head.appendChild(fontAwesome);
 
-	function klimasToggleSubmenu(event, link) {
-		if (window.innerWidth <= 768) {
-			event.preventDefault();
-			const navItem = link.closest('.klimas-nav-item');
-			
-			document.querySelectorAll('.klimas-nav-item.klimas-active').forEach(item => {
-				if (item !== navItem) {
-					item.classList.remove('klimas-active');
+			// Google Translate Script
+			function googleTranslateElementInit() {
+				try {
+					new google.translate.TranslateElement({
+						pageLanguage: 'en',
+						includedLanguages: 'en,es,de,it,ar,zh-CN,ja',
+						layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+					}, 'google_translate_element');
+				} catch (e) {
+					console.error('Google Translate initialization failed:', e);
+					alert('Language translation service is unavailable. Please try again later.');
 				}
-			});
-			
-			navItem.classList.toggle('klimas-active');
-		}
-	}
-
-	function klimasInitSidebar() {
-		window.addEventListener('resize', () => {
-			if (window.innerWidth > 768) {
-				klimasCloseMobileMenu();
 			}
-		});
 
-		document.querySelectorAll('.klimas-nav-link, .klimas-submenu-item').forEach(link => {
-			link.addEventListener('click', (e) => {
-				if (!link.closest('.klimas-has-submenu') || window.innerWidth > 768) {
-					if (window.innerWidth <= 768) {
-						klimasCloseMobileMenu();
+			// Load Google Translate API
+			const translateScript = document.createElement('script');
+			translateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+			document.head.appendChild(translateScript);
+
+			// Language Selector Logic with Retry Mechanism
+			const languageSelect = document.getElementById('language-select');
+			languageSelect.addEventListener('change', (e) => {
+				const lang = e.target.value;
+				document.documentElement.lang = lang;
+
+				let attempts = 0;
+				const maxAttempts = 10;
+				const interval = setInterval(() => {
+					const select = document.querySelector('.goog-te-combo');
+					if (select || attempts >= maxAttempts) {
+						clearInterval(interval);
+						if (select) {
+							select.value = lang;
+							select.dispatchEvent(new Event('change'));
+						} else {
+							console.warn('Google Translate widget not found after max attempts.');
+							alert('Language translation failed. Please refresh the page.');
+						}
 					}
-					console.log('KLIMAS Navigation:', link.textContent.trim());
+					attempts++;
+				}, 200);
+			});
+
+			// Sidebar toggle for mobile
+			const hamburger = document.querySelector('.hamburger');
+			const sidebar = document.querySelector('.sidebar');
+
+			hamburger.addEventListener('click', () => {
+				sidebar.classList.toggle('active');
+			});
+
+			// Close sidebar when clicking outside on mobile
+			document.addEventListener('click', (e) => {
+				if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+					sidebar.classList.remove('active');
+					document.querySelectorAll('.has-submenu, .has-sub-submenu').forEach(item => {
+						item.classList.remove('active');
+					});
 				}
 			});
-		});
 
-		const customerService = document.querySelector('.klimas-customer-service');
-		if (customerService) {
-			customerService.addEventListener('click', () => {
-				alert('KLIMAS Customer Service:\n📞 +1 (555) 123-4567\n✉️ service@klimas.com');
+			// Submenu toggle for mobile
+			const hasSubmenus = document.querySelectorAll('.has-submenu .sidebar-link');
+			hasSubmenus.forEach(link => {
+				link.addEventListener('click', (e) => {
+					if (window.innerWidth <= 768) {
+						e.preventDefault();
+						const parent = link.parentElement;
+						parent.classList.toggle('active');
+					}
+				});
 			});
-		}
 
-		document.addEventListener('touchmove', function(e) {
-			if (document.getElementById('klimasContainer').classList.contains('klimas-mobile-menu-open')) {
-				e.preventDefault();
+			// Sub-submenu toggle for mobile
+			const hasSubSubmenus = document.querySelectorAll('.has-sub-submenu .submenu-item-link');
+			hasSubSubmenus.forEach(link => {
+				link.addEventListener('click', (e) => {
+					if (window.innerWidth <= 768) {
+						e.preventDefault();
+						const parent = link.parentElement;
+						parent.classList.toggle('active');
+					}
+				});
+			});
+
+			// Debounce utility
+			function debounce(func, wait) {
+				let timeout;
+				return function (...args) {
+					clearTimeout(timeout);
+					timeout = setTimeout(() => func.apply(this, args), wait);
+				};
 			}
-		}, { passive: false });
-	}
 
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', klimasInitSidebar);
-	} else {
-		klimasInitSidebar();
-	}
-</script>
-<!-- ------------------ new navbar end ---------------------- -->
+			// Hover trigger for desktop sidebar
+			document.addEventListener('mousemove', debounce((e) => {
+				if (window.innerWidth > 768) {
+					const sidebarWidth = 40;
+					if (e.clientX <= sidebarWidth && !sidebar.classList.contains('active')) {
+						sidebar.classList.add('active');
+						document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+							s.classList.remove('active');
+						});
+					} else if (e.clientX > 670 && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !e.target.closest('.secondary-sidebar') && !e.target.closest('.tertiary-sidebar')) {
+						sidebar.classList.remove('active');
+						document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+							s.classList.remove('active');
+						});
+					}
+				}
+			}, 10));
+
+			// Secondary sidebar hover logic with dynamic positioning
+			const hasSubmenuItems = document.querySelectorAll('.has-submenu');
+			hasSubmenuItems.forEach(item => {
+				item.addEventListener('mouseenter', () => {
+					if (window.innerWidth > 768) {
+						const submenuId = item.getAttribute('data-submenu');
+						document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+							s.classList.remove('active');
+						});
+						const secondarySidebar = document.getElementById(submenuId);
+						if (secondarySidebar) {
+							const itemRect = item.getBoundingClientRect();
+							const headerHeight = document.querySelector('.header').offsetHeight;
+							const viewportHeight = window.innerHeight;
+							let topPosition = itemRect.top + window.scrollY - headerHeight;
+							topPosition = Math.max(80, Math.min(topPosition, viewportHeight - secondarySidebar.offsetHeight - 20));
+							secondarySidebar.style.top = `${topPosition}px`;
+							secondarySidebar.classList.add('active');
+							sidebar.classList.add('active');
+						}
+					}
+				});
+
+				item.addEventListener('mouseleave', (e) => {
+					if (window.innerWidth > 768) {
+						const submenuId = item.getAttribute('data-submenu');
+						const secondarySidebar = document.getElementById(submenuId);
+						if (secondarySidebar && !e.relatedTarget.closest(`#${submenuId}`) && !e.relatedTarget.closest('.tertiary-sidebar')) {
+							secondarySidebar.classList.remove('active');
+						}
+					}
+				});
+			});
+
+			// Tertiary sidebar hover logic with dynamic positioning
+			const hasSubSubmenuItems = document.querySelectorAll('.has-sub-submenu');
+			hasSubSubmenuItems.forEach(item => {
+				item.addEventListener('mouseenter', () => {
+					if (window.innerWidth > 768) {
+						const subSubmenuId = item.getAttribute('data-sub-submenu');
+						document.querySelectorAll('.tertiary-sidebar').forEach(s => {
+							s.classList.remove('active');
+						});
+						const tertiarySidebar = document.getElementById(subSubmenuId);
+						if (tertiarySidebar) {
+							const itemRect = item.getBoundingClientRect();
+							const headerHeight = document.querySelector('.header').offsetHeight;
+							const viewportHeight = window.innerHeight;
+							let topPosition = itemRect.top + window.scrollY - headerHeight;
+							topPosition = Math.max(80, Math.min(topPosition, viewportHeight - tertiarySidebar.offsetHeight - 20));
+							tertiarySidebar.style.top = `${topPosition}px`;
+							tertiarySidebar.classList.add('active');
+							const parentSecondary = item.closest('.secondary-sidebar');
+							if (parentSecondary) {
+								parentSecondary.classList.add('active');
+							}
+							sidebar.classList.add('active');
+						}
+					}
+				});
+
+				item.addEventListener('mouseleave', (e) => {
+					if (window.innerWidth > 768) {
+						const subSubmenuId = item.getAttribute('data-sub-submenu');
+						const tertiarySidebar = document.getElementById(subSubmenuId);
+						if (tertiarySidebar && !e.relatedTarget.closest(`#${subSubmenuId}`)) {
+							tertiarySidebar.classList.remove('active');
+						}
+					}
+				});
+			});
+
+			// Keep secondary and tertiary sidebars open when hovering
+			document.querySelectorAll('.secondary-sidebar').forEach(secSidebar => {
+				secSidebar.addEventListener('mouseenter', () => {
+					if (window.innerWidth > 768) {
+						secSidebar.classList.add('active');
+						sidebar.classList.add('active');
+					}
+				});
+				secSidebar.addEventListener('mouseleave', (e) => {
+					if (window.innerWidth > 768) {
+						const relatedTarget = e.relatedTarget;
+						const submenuId = secSidebar.id;
+						const parentItem = document.querySelector(`.has-submenu[data-submenu="${submenuId}"]`);
+						if (!relatedTarget.closest(`#${submenuId}`) && !relatedTarget.closest('.tertiary-sidebar') && !parentItem.contains(relatedTarget)) {
+							secSidebar.classList.remove('active');
+						}
+					}
+				});
+			});
+
+			document.querySelectorAll('.tertiary-sidebar').forEach(terSidebar => {
+				terSidebar.addEventListener('mouseenter', () => {
+					if (window.innerWidth > 768) {
+						terSidebar.classList.add('active');
+						const subSubmenuId = terSidebar.id;
+						const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+						const parentSecondary = parentItem ? parentItem.closest('.secondary-sidebar') : null;
+						if (parentSecondary) {
+							parentSecondary.classList.add('active');
+						}
+						sidebar.classList.add('active');
+					}
+				});
+				secSidebar.addEventListener('mouseleave', (e) => {
+					if (window.innerWidth > 768) {
+						const relatedTarget = e.relatedTarget;
+						const submenuId = secSidebar.id;
+						const parentItem = document.querySelector(`.has-submenu[data-submenu="${submenuId}"]`);
+						if (!relatedTarget.closest(`#${submenuId}`) && !relatedTarget.closest('.tertiary-sidebar') && !parentItem.contains(relatedTarget)) {
+							secSidebar.classList.remove('active');
+						}
+					}
+				});
+			});
+
+			document.querySelectorAll('.tertiary-sidebar').forEach(terSidebar => {
+				terSidebar.addEventListener('mouseenter', () => {
+					if (window.innerWidth > 768) {
+						terSidebar.classList.add('active');
+						const subSubmenuId = terSidebar.id;
+						const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+						const parentSecondary = parentItem ? parentItem.closest('.secondary-sidebar') : null;
+						if (parentSecondary) {
+							parentSecondary.classList.add('active');
+						}
+						sidebar.classList.add('active');
+					}
+				});
+				terSidebar.addEventListener('mouseleave', (e) => {
+					if (window.innerWidth > 768) {
+						const relatedTarget = e.relatedTarget;
+						const subSubmenuId = terSidebar.id;
+						const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+						if (!relatedTarget.closest(`#${subSubmenuId}`) && !parentItem.contains(relatedTarget)) {
+							terSidebar.classList.remove('active');
+						}
+					}
+				});
+			});
+		</script>
+
+		<!-- ------------------ new navbar end ---------------------- -->
 
 
 
@@ -534,7 +737,6 @@ Best Laser Cutting Machine Supplier, Galvanized Coil, PPGI Coil, prepainted galv
 							font-size: 21px !important;
 						}
 					}
-					
 				</style>
 
 				<style>
@@ -1336,10 +1538,10 @@ Best Laser Cutting Machine Supplier, Galvanized Coil, PPGI Coil, prepainted galv
 				</div>
 			</footer>
 
-			<ul class="social1">
+			<!-- <ul class="social1">
 				<li><a href="https://wa.me/+919156651186?text=I'm%20interested%20in"><i class="fa fa-whatsapp"></i></a>
 				</li>
-			</ul>
+			</ul> -->
 
 
 			<!-- Footer End -->
