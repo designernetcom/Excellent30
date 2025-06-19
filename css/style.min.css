@@ -16298,7 +16298,7 @@ html[lang="ar"] .language-selector select {
 .header-btn {
     padding: 10px 20px;
     border: none;
-    background: linear-gradient(135deg, #e30613, #c20511);
+    background: #B38A3B;
     color: #fff;
     font-size: 14px;
     font-weight: 600;
@@ -16309,7 +16309,7 @@ html[lang="ar"] .language-selector select {
 }
 
 .header-btn:hover {
-    background: linear-gradient(135deg, #c20511, #a1040e);
+    background: #1D0200;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -16352,7 +16352,7 @@ html[lang="ar"] .language-selector select {
     top: 0;
     bottom: 0;
     width: 40px;
-    background: linear-gradient(135deg, #e30613, #c20511);
+    background: #B38A3B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16554,7 +16554,7 @@ html[lang="ar"] .language-selector select {
 }
 
 .customer-service {
-    background: linear-gradient(135deg, #e30613, #c20511);
+    background: #B38A3B;
     color: #fff;
     margin-top: auto;
     border-radius: 0 8px 8px 0;
@@ -16582,7 +16582,7 @@ html[lang="ar"] .language-selector select {
 
 .social-icons a {
     color: #333;
-    font-size: 20px;
+    font-size: 30px;
     transition: all 0.3s ease;
 }
 
@@ -16809,3 +16809,12 @@ html[lang="ar"] .language-selector select {
     }
 }
 
+
+
+@media only screen and (max-width: 1028px) {
+   .video_bgg{
+    margin-top: 100px !important;
+   }
+
+  }
+  
