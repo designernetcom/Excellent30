@@ -16179,7 +16179,8 @@ th {
     } */
 
 
-    .sticky-header .contact-info, .sticky-header .social-icons{
+    .sticky-header .contact-info,
+    .sticky-header .social-icons {
         display: none !important;
     }
 }
@@ -16392,14 +16393,15 @@ html[lang="ar"] .language-selector select {
 }
 
 .sidebar-item:hover {
-    background: linear-gradient(135deg, #e30613, #c20511);
+    background: #B38A3B;
     color: #fff;
     padding-left: 25px;
-    box-shadow: 0 0 10px rgba(227, 6, 19, 0.5);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+        0px 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .sidebar-item:active {
-    background: linear-gradient(135deg, #a1040e, #8b030c);
+    background: #B38A3B;
 }
 
 .sidebar-item i {
@@ -16436,7 +16438,7 @@ html[lang="ar"] .language-selector select {
     position: fixed;
     left: 250px;
     width: 220px;
-    background: linear-gradient(135deg, #ff4d4d, #ff8a5c);
+    background: linear-gradient(135deg, #B38A3B, #E2C275);
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(8px);
     transform: scale(0.95);
@@ -16460,7 +16462,7 @@ html[lang="ar"] .language-selector select {
     position: fixed;
     left: 470px;
     width: 200px;
-    background: linear-gradient(135deg, #ff2d55, #ffbc3b);
+    background: linear-gradient(135deg, #B38A3B, #F3E2B9);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -16561,9 +16563,10 @@ html[lang="ar"] .language-selector select {
 }
 
 .customer-service:hover {
-    background: linear-gradient(135deg, #c20511, #a1040e);
+    background: #1D0200;
     padding-left: 25px;
-    box-shadow: 0 0 10px rgba(227, 6, 19, 0.5);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+        0px 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .customer-service:active {
@@ -16586,10 +16589,32 @@ html[lang="ar"] .language-selector select {
     transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
+/* .social-icons a:hover {
     color: #e30613;
     transform: translateY(-3px) scale(1.1);
+} */
+
+.fa-whatsapp:hover {
+    color: #25D366;
+    transform: translateY(-3px) scale(1.1);
 }
+.fa-linkedin:hover {
+    color: #0077B5;
+    transform: translateY(-3px) scale(1.1);
+}
+.fa-facebook:hover {
+    color: #0077B5;
+    transform: translateY(-3px) scale(1.1);
+}
+.fa-instagram:hover {
+    color: #E4405F;
+    transform: translateY(-3px) scale(1.1);
+}
+.fa-youtube:hover {
+    color: #E4405F;
+    transform: translateY(-3px) scale(1.1);
+}
+
 
 .language-selector {
     padding: 15px 20px;
@@ -16632,7 +16657,7 @@ html[lang="ar"] .language-selector select {
 }
 
 .hamburger:hover {
-    color: #e30613;
+    color: #B38A3B;
     transform: rotate(90deg);
 }
 
@@ -16649,10 +16674,10 @@ html[lang="ar"] .language-selector select {
     }
 
     .has-submenu:hover .sidebar-link {
-        background: linear-gradient(135deg, #e30613, #c20511);
+        /* background: #B38A3B; */
         color: #fff;
         padding-left: 25px;
-        box-shadow: 0 0 10px rgba(227, 6, 19, 0.5);
+        /* box-shadow: 0 0 10px rgba(227, 6, 19, 0.5); */
     }
 
     .sidebar:hover,
@@ -16725,27 +16750,27 @@ html[lang="ar"] .language-selector select {
     .submenu-item {
         position: relative;
         display: block;
-        padding: 10px 20px;
+        padding: 10px 7px;
         font-size: 14px;
         color: #333;
         transition: all 0.3s ease;
     }
 
     .submenu-item:hover {
-        background: #e30613;
-        color: #fff;
-        padding-left: 25px;
+        background: #f5f5f5;
+        color: black;
+        padding-left: 7px;
     }
 
     .sub-submenu {
         display: none;
-        padding-left: 20px;
+        /* padding-left: 20px; */
         background-color: #f0f0f0;
     }
 
     .sub-submenu-item {
         display: block;
-        padding: 8px 20px;
+        padding: 8px 10px;
         font-size: 13px;
         color: #333;
         text-decoration: none;
@@ -16812,9 +16837,8 @@ html[lang="ar"] .language-selector select {
 
 
 @media only screen and (max-width: 1028px) {
-   .video_bgg{
-    margin-top: 100px !important;
-   }
+    .video_bgg {
+        margin-top: 100px !important;
+    }
 
-  }
-  
+}
