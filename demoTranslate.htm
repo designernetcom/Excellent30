@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Language Switcher with Google Translate</title>
+  <style>
+    /* Style for the language dropdown */
+    #google_translate_element select {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #fff;
+    }
+
+    /* Hide the Google Translate toolbar */
+    .goog-te-banner-frame.skiptranslate {
+      display: none !important;
+    }
+
+    /* Remove the top padding added by Google Translate */
+    body {
+      top: 0 !important;
+      position: static !important;
+    }
+  </style>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: "en",
+        includedLanguages: "en,es,de,it,ar",
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      }, "google_translate_element");
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+  <header>
+    <div id="google_translate_element"></div>
+  </header>
+
+  <main>
+    <h1>Welcome to Our Website</h1>
+    <p>Explore our content in English.</p>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <footer>
+      <p>All Rights Reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>

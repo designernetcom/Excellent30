@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLIMAS Style Sidebar Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Top Info Strip */
+        .top-strip {
+            background: #333;
+            color: white;
+            padding: 8px 0;
+            font-size: 12px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .top-strip-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item:hover {
+            opacity: 1;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e41e24;
+            letter-spacing: 2px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            width: 300px;
+            padding: 10px 40px 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .anniversary-badge {
+            background: #e41e24;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 100vh;
+            background: #f0f0f0;
+            border-right: 1px solid #ddd;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+
+        .left-sidebar:hover {
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            background: white;
+            position: relative;
+        }
+
+        .sidebar-logo {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e41e24;
+            letter-spacing: 1px;
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-icon span {
+            width: 100%;
+            height: 2px;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+
+        .left-sidebar:hover .menu-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .left-sidebar:hover .menu-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .left-sidebar:hover .menu-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .nav-menu {
+            padding: 20px 0;
+        }
+
+        .nav-item {
+            position: relative;
+            margin: 2px 0;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .nav-link:hover {
+            background: #f8f8f8;
+            color: #e41e24;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .nav-text {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .left-sidebar:hover .nav-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: rotate(0deg);
+        }
+
+        .left-sidebar:hover .nav-arrow {
+            opacity: 1;
+        }
+
+        .nav-item.has-submenu:hover .nav-arrow {
+            transform: rotate(90deg);
+        }
+
+        /* Submenu */
+        .submenu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0 8px 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .nav-item:hover .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .submenu-header {
+            padding: 20px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #e41e24;
+        }
+
+        .submenu-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submenu-item:hover {
+            background: #f8f8f8;
+            color: #e41e24;
+            padding-left: 25px;
+        }
+
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Customer Service Button */
+        .customer-service {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #e41e24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(228, 30, 36, 0.3);
+        }
+
+        .customer-service:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(228, 30, 36, 0.4);
+        }
+
+        .customer-service svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .service-text {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e41e24;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .left-sidebar:hover .service-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 70px;
+            padding: 40px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .hero-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1003;
+            background: #e41e24;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(228, 30, 36, 0.3);
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .mobile-menu-btn.active {
+            background: #333;
+        }
+
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .top-strip {
+                padding-left: 80px;
+            }
+
+            .top-strip-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-header {
+                padding-left: 80px;
+            }
+
+            .header-content {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .search-input {
+                width: 180px;
+            }
+
+            .anniversary-badge {
+                display: none;
+            }
+
+            .left-sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+                background: white;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1002;
+            }
+
+            .left-sidebar.mobile-open {
+                transform: translateX(0);
+            }
+
+            .left-sidebar.mobile-open .nav-text {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .left-sidebar.mobile-open .nav-arrow {
+                opacity: 1;
+            }
+
+            .left-sidebar.mobile-open .service-text {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            /* Hide desktop menu icon on mobile and show logo instead */
+            .left-sidebar .menu-icon {
+                display: none;
+            }
+
+            .left-sidebar .sidebar-logo {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+                padding-top: 30px;
+            }
+
+            .submenu {
+                position: static;
+                width: 100%;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-radius: 0;
+            }
+
+            .nav-item.active .submenu {
+                max-height: 400px;
+            }
+
+            .submenu-header {
+                background: #e41e24;
+                color: white;
+            }
+
+            .hero-section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .top-strip-content {
+                padding: 0 5px;
+            }
+
+            .contact-info {
+                font-size: 11px;
+            }
+
+            .header-content {
+                padding: 0 10px;
+            }
+
+            .search-input {
+                width: 150px;
+                font-size: 12px;
+            }
+
+            .hero-title {
+                font-size: 1.8em;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9em;
+                padding: 0 10px;
+            }
+
+            .main-content {
+                padding: 15px;
+                padding-top: 25px;
+            }
+
+            .mobile-menu-btn {
+                width: 45px;
+                height: 45px;
+                top: 15px;
+                left: 15px;
+                font-size: 16px;
+            }
+
+            .main-header {
+                padding-left: 70px;
+            }
+
+            .top-strip {
+                padding-left: 70px;
+            }
+        }
+
+        /* Prevent body scroll when mobile menu is open */
+        body.mobile-menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+        <span id="menuIcon">☰</span>
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Top Info Strip -->
+    <div class="top-strip">
+        <div class="top-strip-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    📍 123 Business Street, City, State 12345
+                </div>
+                <div class="contact-item">
+                    📞 +1 (555) 123-4567
+                </div>
+                <div class="contact-item">
+                    ✉️ info@klimas.com
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">KLIMAS</div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="https://en.klimas.com/">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="anniversary-badge">35 YEARS</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Left Sidebar -->
+    <nav class="left-sidebar" id="leftSidebar">
+        <div class="sidebar-header">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sidebar-logo">KLIMAS</div>
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                    </svg>
+                    <span class="nav-text">Home</span>
+                </a>
+            </div>
+
+            <div class="nav-item has-submenu">
+                <a href="#" class="nav-link" onclick="toggleSubmenu(event, this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                    </svg>
+                    <span class="nav-text">Products</span>
+                    <svg class="nav-arrow" width="12" height="12" viewBox="0 0 24 24">
+                        <path d="M9 18l6-6-6-6v12z" fill="currentColor" />
+                    </svg>
+                </a>
+                <div class="submenu">
+                    <div class="submenu-header">Product Categories</div>
+                    <div class="submenu-item">External thermal insulation composite system - ETICS</div>
+                    <div class="submenu-item">Mechanical anchors, concrete screws, chemical anchors</div>
+                    <div class="submenu-item">Frame and general purpose fixings</div>
+                    <div class="submenu-item">Screws and fasteners for wooden constructions</div>
+                    <div class="submenu-item">Fastening systems for lightweight roof and wall cladding</div>
+                    <div class="submenu-item">Fasteners for flat roof thermal insulation</div>
+                </div>
+            </div>
+
+            <div class="nav-item has-submenu">
+                <a href="#" class="nav-link" onclick="toggleSubmenu(event, this)">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                    </svg>
+                    <span class="nav-text">Solutions</span>
+                    <svg class="nav-arrow" width="12" height="12" viewBox="0 0 24 24">
+                        <path d="M9 18l6-6-6-6v12z" fill="currentColor" />
+                    </svg>
+                </a>
+                <div class="submenu">
+                    <div class="submenu-header">Our Solutions</div>
+                    <div class="submenu-item">Construction Solutions</div>
+                    <div class="submenu-item">Industrial Applications</div>
+                    <div class="submenu-item">Specialized Systems</div>
+                    <div class="submenu-item">Custom Solutions</div>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <span class="nav-text">Applications</span>
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                    </svg>
+                    <span class="nav-text">Locations</span>
+                </a>
+            </div>
+
+            <div class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg class="nav-icon" viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span class="nav-text">Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="customer-service" title="Customer Service">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.27-.27.35-.67.24-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+            </svg>
+            <div class="service-text">CUSTOMER SERVICE</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title">Welcome to KLIMAS</h1>
+            <p class="hero-subtitle">Professional fastening solutions for construction and industry. Experience our
+                innovative sidebar navigation with hover effects, submenu functionality, and full responsive design.</p>
+
+
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu functionality
+        function toggleMobileMenu() {
+            const sidebar = document.getElementById('leftSidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const menuIcon = document.getElementById('menuIcon');
+            const body = document.body;
+
+            sidebar.classList.toggle('mobile-open');
+            overlay.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+            body.classList.toggle('mobile-menu-open');
+
+            // Change menu icon
+            if (sidebar.classList.contains('mobile-open')) {
+                menuIcon.innerHTML = '✕';
+            } else {
+                menuIcon.innerHTML = '☰';
+            }
+        }
+
+        function closeMobileMenu() {
+            const sidebar = document.getElementById('leftSidebar');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const menuIcon = document.getElementById('menuIcon');
+            const body = document.body;
+
+            sidebar.classList.remove('mobile-open');
+            overlay.classList.remove('active');
+            menuBtn.classList.remove('active');
+            body.classList.remove('mobile-menu-open');
+            menuIcon.innerHTML = '☰';
+
+            // Close all open submenus
+            document.querySelectorAll('.nav-item.active').forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+
+        // Submenu toggle for mobile
+        function toggleSubmenu(event, link) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                const navItem = link.closest('.nav-item');
+
+                // Close other open submenus
+                document.querySelectorAll('.nav-item.active').forEach(item => {
+                    if (item !== navItem) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                navItem.classList.toggle('active');
+            }
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close mobile menu when clicking nav links (except submenu toggles)
+        document.querySelectorAll('.nav-link, .submenu-item').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (!link.closest('.has-submenu') || window.innerWidth > 768) {
+                    if (window.innerWidth <= 768) {
+                        closeMobileMenu();
+                    }
+                    console.log('Navigating to:', link.textContent.trim());
+                }
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-btn').addEventListener('click', () => {
+            const searchTerm = document.querySelector('.search-input').value;
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Customer service click
+        document.querySelector('.customer-service').addEventListener('click', () => {
+            alert('Customer Service: +1 (555) 123-4567\nEmail: service@klimas.com');
+        });
+
+        // Prevent scroll when mobile menu is open
+        document.addEventListener('touchmove', function (e) {
+            if (document.body.classList.contains('mobile-menu-open')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!-- --------------------- old nav ------------------------ -->
+
+
+
+
+
+
+<div class="sticky-header main-bar-wraper navbar-expand-lg">
+    <div class="top-strap">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info d-flex align-items-center">
+                <span class="me-3"><i class="ti-email"> &nbsp;</i><strong>Email - </strong>
+                    sales@excellentengineering.co.in</a></span>
+
+                <span><i class="ti-mobile">&nbsp;</i><strong>phone - </strong>(+91-8237185786) /
+                    (+91-9730978787)</a></span>
+            </div>
+
+            <div class="social-icons">
+                <i class="ti-location-pin"></i><strong>Address - </strong> Narhe Industrial Zone, Pune,
+                Maharashtra, 411041.
+            </div>
+
+
+            <!------------------- translator --------------------------->
+
+
+
+            <style>
+                #google_translate_element select {
+                    padding: 8px;
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    background-color: #fff;
+                }
+            </style>
+            <script type="text/javascript">
+                // Initialize Google Translate
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                        pageLanguage: 'en', // Default language
+                        includedLanguages: 'en,es,de,it,ar,fr,ko,ja,zh-CN', // Supported languages
+                        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                }
+            </script>
+            <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <div id="google_translate_element"></div>
+            <div id="google_translate_element"></div>
+        </div>
+
+
+
+        <!------------------- translator End --------------------------->
+
+
+    </div>
+    <div class="main-bar clearfix" style="margin-top: 40px;">
+
+
+
+
+        <div class="container clearfix">
+
+
+            <!-- website logo -->
+            <div class="logo-header mostion logo-dark gg">
+                <a href="index.html">
+                    <img src="./images/eec3.png" class="SecondLogo" alt="Excellent Engineering ">
+                    <!-- <h4 class="rrr">Excellent Engineering Company</h4> -->
+                </a>
+            </div>
+
+            <!-- nav toggle button -->
+            <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
+                data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- extra nav -->
+
+            <!-- main nav -->
+            <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+                <div class="logo-header d-md-block d-lg-none">
+                    <a href="index.html"><img src="images/eec3.png" alt="Excellent Engineering "></a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"> <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us<i class="fa fa-chevron-down"></i></a>
+                        <ul class="sub-menu tab-content">
+                            <li><a href="management.html">Management</a></li>
+                            <li><a href="certificate.html">Certificate</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="location.html">Location</a>
+                    </li>
+                    <li>
+                        <a href="customer.html">Customer</a>
+                    </li>
+                    <li>
+                        <a>Products<i class="fa fa-chevron-down"></i></a>
+                        <ul class="sub-menu tab-content">
+                            <li>
+                                <a>Galvanized <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="galvanized-coil.html">Galvanized Coil</a></li>
+                                    <li><a href="galvanized-corrugated-sheet.html">Galvanized Corrugatted
+                                            Sheet</a></li>
+                                    <li><a href="pre-painted-galvanized-sheet.html">Pre-Painted Galvanized
+                                            Sheet</a></li>
+
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Manufacturing Material <i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="composting-machine.html">Composting Machine</a></li>
+                                    <li><a href="stainless-steel-fabrication.html">Stainless Steel
+                                            Fabrication</a></li>
+                                    <li><a href="ms-fabrication.html">MS Fabrication</a></li>
+                                    <li><a href="ms-structure-fabrication.html">MS Structure Fabrication</a>
+                                    </li>
+                                    <li><a href="ms-base-frame-fabrication.html">MS Base Frame
+                                            Fabrication</a></li>
+                                    <li><a href="ms-tank-fabrication.html">MS Tank Fabrication</a></li>
+                                    <li><a href="ms-compact-fabrication.html">MS Compact Fabrication</a>
+                                    </li>
+                                    <li><a href="ss-tank-fabrication.html">SS Tank Fabrication</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a>Laser Cutting<i class="fa fa-angle-right"></i></a>
+                                <ul class="sub-menu">
+                                    <li><a href="ms-laser-cutting.html">MS Laser Cutting</a></li>
+                                    <li><a href="ss-laser-cutting.html">SS Laser Cutting</a></li>
+                                    <li><a href="laser-cutting-machine.html">Laser Cutting</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="featured-products.html">Feature Products</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="#">Gallery <i class="fa fa-chevron-down"></i> </a>
+                        <ul class="sub-menu tab-content">
+                            <li><a href="image.gallary.html">Image Gallery</a></li>
+                            <li><a href="video-gallary.html">Video Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="career.html">Career</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <a class="site-button m-3 m-r10 m-b10 btnhover20 d-none d-sm-block NavButtonMain"
+                    data-toggle="modal" data-target="#exampleModal">Enquire Now</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------new nav unique class ----------------------- -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLIMAS Modular Sidebar Navigation</title>
+    
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 1: RESET & BASE STYLES ==== -->
+    <style>
+        /* Reset styles for KLIMAS components */
+        .klimas-container * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .klimas-container {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 2: TOP STRIP STYLES ==== -->
+    <style>
+        .klimas-top-strip {
+            background: #333;
+            color: white;
+            padding: 8px 0;
+            font-size: 12px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .klimas-top-strip-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .klimas-contact-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .klimas-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .klimas-contact-item:hover {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 3: MAIN HEADER STYLES ==== -->
+    <style>
+        .klimas-main-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .klimas-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .klimas-logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #e41e24;
+            letter-spacing: 2px;
+        }
+
+        .klimas-header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .klimas-search-box {
+            position: relative;
+        }
+
+        .klimas-search-input {
+            width: 300px;
+            padding: 10px 40px 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .klimas-search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .klimas-anniversary-badge {
+            background: #e41e24;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 4: LEFT SIDEBAR CORE STYLES ==== -->
+    <style>
+        .klimas-left-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 100vh;
+            background: #f0f0f0;
+            border-right: 1px solid #ddd;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+
+        .klimas-left-sidebar:hover {
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .klimas-sidebar-header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+            background: white;
+            position: relative;
+        }
+
+        .klimas-sidebar-logo {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e41e24;
+            letter-spacing: 1px;
+        }
+
+        .klimas-menu-icon {
+            width: 24px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .klimas-menu-icon span {
+            width: 100%;
+            height: 2px;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+
+        .klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .klimas-left-sidebar:hover .klimas-menu-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 5: NAVIGATION MENU STYLES ==== -->
+    <style>
+        .klimas-nav-menu {
+            padding: 20px 0;
+        }
+
+        .klimas-nav-item {
+            position: relative;
+            margin: 2px 0;
+        }
+
+        .klimas-nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .klimas-nav-link:hover {
+            background: #f8f8f8;
+            color: #e41e24;
+        }
+
+        .klimas-nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .klimas-nav-text {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .klimas-left-sidebar:hover .klimas-nav-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .klimas-nav-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: rotate(0deg);
+        }
+
+        .klimas-left-sidebar:hover .klimas-nav-arrow {
+            opacity: 1;
+        }
+
+        .klimas-nav-item.klimas-has-submenu:hover .klimas-nav-arrow {
+            transform: rotate(90deg);
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 6: SUBMENU STYLES ==== -->
+    <style>
+        .klimas-submenu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 280px;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0 8px 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .klimas-nav-item:hover .klimas-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .klimas-submenu-header {
+            padding: 20px;
+            background: #f8f8f8;
+            border-bottom: 1px solid #eee;
+            font-weight: bold;
+            color: #e41e24;
+        }
+
+        .klimas-submenu-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .klimas-submenu-item:hover {
+            background: #f8f8f8;
+            color: #e41e24;
+            padding-left: 25px;
+        }
+
+        .klimas-submenu-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 7: CUSTOMER SERVICE BUTTON ==== -->
+    <style>
+        .klimas-customer-service {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #e41e24;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(228, 30, 36, 0.3);
+        }
+
+        .klimas-customer-service:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(228, 30, 36, 0.4);
+        }
+
+        .klimas-customer-service svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .klimas-service-text {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e41e24;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .klimas-left-sidebar:hover .klimas-service-text {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 8: MOBILE STYLES ==== -->
+    <style>
+        .klimas-mobile-menu-btn {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1003;
+            background: #e41e24;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(228, 30, 36, 0.3);
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .klimas-mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .klimas-mobile-menu-btn.klimas-active {
+            background: #333;
+        }
+
+        .klimas-mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .klimas-mobile-overlay.klimas-active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 9: MAIN CONTENT STYLES ==== -->
+    <style>
+        .klimas-main-content {
+            margin-left: 70px;
+            padding: 40px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .klimas-hero-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .klimas-hero-title {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .klimas-hero-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- ==== KLIMAS SIDEBAR CSS - SECTION 10: RESPONSIVE STYLES ==== -->
+    <style>
+        @media (max-width: 768px) {
+            .klimas-mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .klimas-top-strip {
+                padding-left: 80px;
+            }
+
+            .klimas-top-strip-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                padding: 0 10px;
+            }
+
+            .klimas-contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .klimas-main-header {
+                padding-left: 80px;
+            }
+
+            .klimas-header-content {
+                padding: 0 15px;
+            }
+
+            .klimas-logo {
+                font-size: 24px;
+            }
+
+            .klimas-search-input {
+                width: 180px;
+            }
+
+            .klimas-anniversary-badge {
+                display: none;
+            }
+
+            .klimas-left-sidebar {
+                transform: translateX(-100%);
+                width: 280px;
+                background: white;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1002;
+            }
+
+            .klimas-left-sidebar.klimas-mobile-open {
+                transform: translateX(0);
+            }
+
+            .klimas-left-sidebar.klimas-mobile-open .klimas-nav-text {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .klimas-left-sidebar.klimas-mobile-open .klimas-nav-arrow {
+                opacity: 1;
+            }
+
+            .klimas-left-sidebar.klimas-mobile-open .klimas-service-text {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .klimas-left-sidebar .klimas-menu-icon {
+                display: none;
+            }
+
+            .klimas-left-sidebar .klimas-sidebar-logo {
+                display: block;
+            }
+
+            .klimas-main-content {
+                margin-left: 0;
+                padding: 20px;
+                padding-top: 30px;
+            }
+
+            .klimas-submenu {
+                position: static;
+                width: 100%;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                border-radius: 0;
+            }
+
+            .klimas-nav-item.klimas-active .klimas-submenu {
+                max-height: 400px;
+            }
+
+            .klimas-submenu-header {
+                background: #e41e24;
+                color: white;
+            }
+
+            .klimas-hero-section {
+                padding: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .klimas-top-strip-content {
+                padding: 0 5px;
+            }
+
+            .klimas-contact-info {
+                font-size: 11px;
+            }
+
+            .klimas-header-content {
+                padding: 0 10px;
+            }
+
+            .klimas-search-input {
+                width: 150px;
+                font-size: 12px;
+            }
+
+            .klimas-hero-title {
+                font-size: 1.8em;
+            }
+
+            .klimas-hero-subtitle {
+                font-size: 0.9em;
+                padding: 0 10px;
+            }
+
+            .klimas-main-content {
+                padding: 15px;
+                padding-top: 25px;
+            }
+
+            .klimas-mobile-menu-btn {
+                width: 45px;
+                height: 45px;
+                top: 15px;
+                left: 15px;
+                font-size: 16px;
+            }
+
+            .klimas-main-header {
+                padding-left: 70px;
+            }
+
+            .klimas-top-strip {
+                padding-left: 70px;
+            }
+        }
+
+        .klimas-container.klimas-mobile-menu-open {
+            overflow: hidden;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <!-- ==== KLIMAS HTML STRUCTURE - COPY THIS COMPLETE SECTION ==== -->
+    <div class="klimas-container" id="klimasContainer">
+        <!-- Mobile Menu Button -->
+        <button class="klimas-mobile-menu-btn" id="klimasMobileMenuBtn" onclick="klimasToggleMobileMenu()">
+            <span id="klimasMenuIcon">☰</span>
+        </button>
+
+        <!-- Mobile Overlay -->
+        <div class="klimas-mobile-overlay" onclick="klimasCloseMobileMenu()"></div>
+
+        <!-- Top Info Strip -->
+        <div class="klimas-top-strip">
+            <div class="klimas-top-strip-content">
+                <div class="klimas-contact-info">
+                    <div class="klimas-contact-item">
+                        📍 123 Business Street, City, State 12345
+                    </div>
+                    <div class="klimas-contact-item">
+                        📞 +1 (555) 123-4567
+                    </div>
+                    <div class="klimas-contact-item">
+                        ✉️ info@klimas.com
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="klimas-main-header">
+            <div class="klimas-header-content">
+                <div class="klimas-logo">KLIMAS</div>
+                <div class="klimas-header-right">
+                    <div class="klimas-search-box">
+                        <input type="text" class="klimas-search-input" placeholder="https://en.klimas.com/">
+                        <button class="klimas-search-btn">🔍</button>
+                    </div>
+                    <div class="klimas-anniversary-badge">35 YEARS</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Left Sidebar Navigation -->
+        <nav class="klimas-left-sidebar" id="klimasLeftSidebar">
+            <div class="klimas-sidebar-header">
+                <div class="klimas-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="klimas-sidebar-logo">KLIMAS</div>
+            </div>
+            
+            <div class="klimas-nav-menu">
+                <div class="klimas-nav-item">
+                    <a href="#" class="klimas-nav-link">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Home</span>
+                    </a>
+                </div>
+
+                <div class="klimas-nav-item klimas-has-submenu">
+                    <a href="#" class="klimas-nav-link" onclick="klimasToggleSubmenu(event, this)">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Products</span>
+                        <svg class="klimas-nav-arrow" width="12" height="12" viewBox="0 0 24 24">
+                            <path d="M9 18l6-6-6-6v12z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <div class="klimas-submenu">
+                        <div class="klimas-submenu-header">Product Categories</div>
+                        <div class="klimas-submenu-item">External thermal insulation composite system - ETICS</div>
+                        <div class="klimas-submenu-item">Mechanical anchors, concrete screws, chemical anchors</div>
+                        <div class="klimas-submenu-item">Frame and general purpose fixings</div>
+                        <div class="klimas-submenu-item">Screws and fasteners for wooden constructions</div>
+                        <div class="klimas-submenu-item">Fastening systems for lightweight roof and wall cladding</div>
+                        <div class="klimas-submenu-item">Fasteners for flat roof thermal insulation</div>
+                    </div>
+                </div>
+
+                <div class="klimas-nav-item klimas-has-submenu">
+                    <a href="#" class="klimas-nav-link" onclick="klimasToggleSubmenu(event, this)">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Solutions</span>
+                        <svg class="klimas-nav-arrow" width="12" height="12" viewBox="0 0 24 24">
+                            <path d="M9 18l6-6-6-6v12z" fill="currentColor"/>
+                        </svg>
+                    </a>
+                    <div class="klimas-submenu">
+                        <div class="klimas-submenu-header">Our Solutions</div>
+                        <div class="klimas-submenu-item">Construction Solutions</div>
+                        <div class="klimas-submenu-item">Industrial Applications</div>
+                        <div class="klimas-submenu-item">Specialized Systems</div>
+                        <div class="klimas-submenu-item">Custom Solutions</div>
+                    </div>
+                </div>
+
+                <div class="klimas-nav-item">
+                    <a href="#" class="klimas-nav-link">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Applications</span>
+                    </a>
+                </div>
+
+                <div class="klimas-nav-item">
+                    <a href="#" class="klimas-nav-link">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Locations</span>
+                    </a>
+                </div>
+
+                <div class="klimas-nav-item">
+                    <a href="#" class="klimas-nav-link">
+                        <svg class="klimas-nav-icon" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span class="klimas-nav-text">Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="klimas-customer-service" title="Customer Service">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.27-.27.35-.67.24-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+                </svg>
+                <div class="klimas-service-text">CUSTOMER SERVICE</div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="klimas-main-content">
+            <section class="klimas-hero-section">
+                <h1 class="klimas-hero-title">Welcome to KLIMAS</h1>
+                <p class="klimas-hero-subtitle">Professional fastening solutions for construction and industry. Experience our innovative sidebar navigation with hover effects, submenu functionality, and full responsive design.</p>
+            </section>
+        </main>
+    </div>
+
+    <!-- ==== KLIMAS JAVASCRIPT - COPY THIS COMPLETE SECTION ==== -->
+    <script>
+        // KLIMAS Sidebar JavaScript Functions - All functions prefixed with 'klimas'
+        
+        // Mobile menu functionality
+        function klimasToggleMobileMenu() {
+            const sidebar = document.getElementById('klimasLeftSidebar');
+            const overlay = document.querySelector('.klimas-mobile-overlay');
+            const menuBtn = document.getElementById('klimasMobileMenuBtn');
+            const menuIcon = document.getElementById('klimasMenuIcon');
+            const container = document.getElementById('klimasContainer');
+            
+            sidebar.classList.toggle('klimas-mobile-open');
+            overlay.classList.toggle('klimas-active');
+            menuBtn.classList.toggle('klimas-active');
+            container.classList.toggle('klimas-mobile-menu-open');
+            
+            // Change menu icon
+            if (sidebar.classList.contains('klimas-mobile-open')) {
+                menuIcon.innerHTML = '✕';
+            } else {
+                menuIcon.innerHTML = '☰';
+            }
+        }
+
+        function klimasCloseMobileMenu() {
+            const sidebar = document.getElementById('klimasLeftSidebar');
+            const overlay = document.querySelector('.klimas-mobile-overlay');
+            const menuBtn = document.getElementById('klimasMobileMenuBtn');
+            const menuIcon = document.getElementById('klimasMenuIcon');
+            const container = document.getElementById('klimasContainer');
+            
+            sidebar.classList.remove('klimas-mobile-open');
+            overlay.classList.remove('klimas-active');
+            menuBtn.classList.remove('klimas-active');
+            container.classList.remove('klimas-mobile-menu-open');
+            menuIcon.innerHTML = '☰';
+            
+            // Close all open submenus
+            document.querySelectorAll('.klimas-nav-item.klimas-active').forEach(item => {
+                item.classList.remove('klimas-active');
+            });
+        }
+
+        // Submenu toggle for mobile
+        function klimasToggleSubmenu(event, link) {
+            if (window.innerWidth <= 768) {
+                event.preventDefault();
+                const navItem = link.closest('.klimas-nav-item');
+                
+                // Close other open submenus
+                document.querySelectorAll('.klimas-nav-item.klimas-active').forEach(item => {
+                    if (item !== navItem) {
+                        item.classList.remove('klimas-active');
+                    }
+                });
+                
+                navItem.classList.toggle('klimas-active');
+            }
+        }
+
+        // Initialize KLIMAS sidebar functionality
+        function klimasInitSidebar() {
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    klimasCloseMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking nav links (except submenu toggles)
+            document.querySelectorAll('.klimas-nav-link, .klimas-submenu-item').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (!link.closest('.klimas-has-submenu') || window.innerWidth > 768) {
+                        if (window.innerWidth <= 768) {
+                            klimasCloseMobileMenu();
+                        }
+                        console.log('KLIMAS Navigation:', link.textContent.trim());
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchBtn = document.querySelector('.klimas-search-btn');
+            if (searchBtn) {
+                searchBtn.addEventListener('click', () => {
+                    const searchTerm = document.querySelector('.klimas-search-input').value;
+                    console.log('KLIMAS Search:', searchTerm);
+                    // Add your search functionality here
+                });
+            }
+
+            // Customer service click
+            const customerService = document.querySelector('.klimas-customer-service');
+            if (customerService) {
+                customerService.addEventListener('click', () => {
+                    alert('KLIMAS Customer Service:\n📞 +1 (555) 123-4567\n✉️ service@klimas.com');
+                });
+            }
+
+            // Prevent scroll when mobile menu is open
+            document.addEventListener('touchmove', function(e) {
+                if (document.getElementById('klimasContainer').classList.contains('klimas-mobile-menu-open')) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+
+        // Auto-initialize when DOM is loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', klimasInitSidebar);
+        } else {
+            klimasInitSidebar();
+        }
+    </script>
+
+    <!-- ==== USAGE INSTRUCTIONS ==== 
+    
+    To use this KLIMAS sidebar in your project:
+    
+    1. COPY CSS SECTIONS (1-10): Copy all the <style> blocks above into your CSS file or <head> section
+    
+    2. COPY HTML STRUCTURE: Copy the complete div with class="klimas-container" and all its contents
+    
+    3. COPY JAVASCRIPT: Copy the complete <script> section with all KLIMAS functions
+    
+    4. CUSTOMIZE: 
+       - Change "KLIMAS" branding to your company name
+       - Update contact information in the top strip
+       - Modify navigation menu items and links
+       - Adjust colors by changing #e41e24 to your brand color
+       - Update submenu items as needed
+    
+    5. INTEGRATION NOTES:
+       - All classes are prefixed with "klimas-" to avoid conflicts
+       - All JavaScript functions are prefixed with "klimas" 
+       - The component is self-contained and won't interfere with other code
+       - Mobile responsive and touch-friendly
+       - Works with any existing CSS framework
+    
+    6. FEATURES INCLUDED:
+       - Hover-to-expand sidebar navigation
+       - Mobile-responsive with hamburger menu
+       - Submenu support with smooth animations
+       - Customer service floating button
+       - Search functionality placeholder
+       - Top contact information strip
+       - Sticky header design
+       - Full accessibility support
+    
+    ==== -->
