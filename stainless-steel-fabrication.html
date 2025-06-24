@@ -114,143 +114,496 @@
 <body id="bg">
 	<div class="page-wraper">
 
-		<!-- header -->
-		<header class="site-header mo-left header" style="background-color: transparent;">
-			
-			<script>
-				//jQuery added to custom scripts in theme settings:
+
+		<span>
+			<header class="site-header mo-left header" style="background-color: transparent;">
+
+				<script>
+					//jQuery added to custom scripts in theme settings:
 					$(window).scroll(function () {
-					if ($(this).scrollTop() >0) {
-					$('.SecondLogo').fadeIn();
-					} else {
-					$('.SecondLogo').fadeOut();
-					}
+						if ($(this).scrollTop() > 0) {
+							$('.SecondLogo').fadeIn();
+						} else {
+							$('.SecondLogo').fadeOut();
+						}
 					});
-					
-			</script>
-			<!-- <p></p> -->
-			<!-- main header -->
-			<div class="sticky-header main-bar-wraper navbar-expand-lg">
-			
-				<div class="top-strap" style="font-size: 13px;">
-					<div class="container d-flex justify-content-between align-items-center">
-						<div class="contact-info d-flex align-items-center">
-							<span class="me-3"><i class="ti-email"> &nbsp;</i><strong>Email - </strong>
-								sales@excellentengineering.co.in</a></span> &nbsp;&nbsp;
 
-							<span><i class="ti-mobile">&nbsp;</i><strong>phone - </strong>(+91-8237185786) /
-								(+91-9730978787)</a></span>
-						</div>
-						<div class="social-icons">
-							<i class="ti-location-pin"></i><strong>Address - </strong> Narhe Industrial Zone, Pune,
-							Maharashtra, 411041.
-						</div>
+				</script>
+				<!-- <style>
+				.SecondLogo {
+					display:none;
+				}
+				/* .is-fixed .rrr {
+					display:none;
+				} */
+				/* .rrr {
+					font-size: 20px;
+					line-height: 24px;
+					padding-top: 37px;
+					margin-bottom: 10px;
+					color: #fff;
+				} */
+			</style> -->
+
+				<!-- Top Strap -->
+
+
+
+
+
+				<!-- main header -->
+
+				<!-- main header END -->
+			</header>
+			<!-- header -->
+
+
+
+
+
+
+			<!-------------------- new navbar ------------------------>
+
+			<!-- Header -->
+
+			<header class="header">
+				<div class="logo">
+				<a href="index.html"></a><img src="images/eec3.png" alt="Logo" class="mobilelogo"></a>
+				<a href="index.html">	<img src="images/Logo_EEC full.png" alt="Logo" class="pclogo"></a>
+
+				</div>
+				<div class="header-right">
+					<a href="contact.html" class="header-btn" style="color: white; text-decoration: none;">Get in
+						Touch</a>
+					<div class="hamburger fas fa-bars"></div>
+				</div>
+			</header>
+
+			<!-- Sidebar -->
+			<nav class="sidebar">
+				<div class="sidebar-logo-strip">
+					<i class="fas fa-globe"></i>
+					<i class="fas fa-info-circle"></i>
+					<i class="fas fa-map-marker-alt"></i>
+					<i class="fas fa-user"></i>
+					<i class="fas fa-box"></i>
+					<i class="fas fa-image"></i>
+					<i class="fas fa-briefcase"></i>
+					<i class="fas fa-headset"></i>
+				</div>
+
+				<!-- Custom Language Selector -->
+				<div class="language-selector">
+					<i class="fas fa-globe"></i>
+					<select id="language-select">
+						<option value="">Select Language</option>
+						<option value="en">English</option>
+						<option value="es">Spanish</option>
+						<option value="de">German</option>
+						<option value="it">Italian</option>
+						<option value="ar">Arabic</option>
+						<option value="zh-CN">Chinese</option>
+						<option value="ja">Japanese</option>
+					</select>
+				</div>
+
+				<!-- Google Translate Widget -->
+				<div id="google_translate_element"></div>
+
+				<div class="sidebar-item has-submenu" data-submenu="About">
+					<a href="about.html" class="sidebar-link" style="color: inherit; text-decoration: none;"><i
+							class="fas fa-info-circle"></i>About Us</a>
+					<div class="submenu">
+						<a href="management.html" class="submenu-item" style="text-decoration: none;">Management</a>
+						<a href="certificate.html" class="submenu-item" style="text-decoration: none;">Certificate</a>
 					</div>
 				</div>
 
-				<div class="main-bar clearfix" style="margin-top: 39px;">
-					<div class="container clearfix">
-						<!-- website logo -->
-						<div class="logo-header mostion logo-dark">
-							<a href="index.html"><img src="images/eec3.png" class="SecondLogo" alt="Excellent Engineering "></a>
-						</div>
-						<!-- nav toggle button -->
-						<button class="navbar-toggler collapsed navicon justify-content-end" type="button"
-							data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-							aria-expanded="false" aria-label="Toggle navigation">
-							<span></span>
-							<span></span>
-							<span></span>
-						</button>
-						<!-- extra nav -->
+				<a href="location.html" class="sidebar-item"><i class="fas fa-map-marker-alt"></i>Location</a>
 
-						<!-- main nav -->
-						<div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
-							<div class="logo-header d-md-block d-lg-none">
-								<a href="index.html"><img src="images/eec3.png" alt="Excellent Engineering "></a>
+				<a href="customer.html" class="sidebar-item"><i class="fas fa-user"></i> Our Client</a>
+
+
+
+
+				<div class="sidebar-item has-submenu" data-submenu="products">
+					<a href="#" class="sidebar-link" style="color: inherit; text-decoration: none;"><i
+							class="fas fa-box"></i> Products</a>
+					<div class="submenu">
+
+						<div class="submenu-item has-sub-submenu" data-sub-submenu="category-a">
+							<a href="#" class="submenu-item-link"
+								style="text-decoration: none; color: inherit;">Galvanized</a>
+							<div class="sub-submenu">
+								<a href="galvanized-coil.html" class="sub-submenu-item">Galvanized-Coil</a>
+								<a href="galvanized-corrugated-sheet.html"
+									class="sub-submenu-item">Galvanized-Corrugated-Sheet</a>
+								<a href="pre-painted-galvanized-sheet.html"
+									class="sub-submenu-item">Pre-Painted-Galvanized-sheet</a>
 							</div>
-							<ul class="nav navbar-nav">
-								<li> <a href="index.html">Home</a>
-								</li>
-								<li class="active">
-									<a href="about.html">About Us<i class="fa fa-chevron-down"></i></a>
-									<ul class="sub-menu tab-content">
-										<li><a href="management.html">Management</a></li>
-										<li><a href="certificate.html">Certificate</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="location.html">Location</a>
-								</li>
-								<li>
-									<a href="customer.html">Customer</a>
-								</li>
-								<li>
-									<a>Products<i class="fa fa-chevron-down"></i></a>
-									<ul class="sub-menu tab-content">
-										<li>
-											<a>Galvanized <i class="fa fa-angle-right"></i></a>
-											<ul class="sub-menu">
-												<li><a href="galvanized-coil.html">Galvanized Coil</a></li>
-												<li><a href="galvanized-corrugated-sheet.html">Galvanized Corrugatted
-														Sheet</a></li>
-												<li><a href="pre-painted-galvanized-sheet.html">Pre-Painted Galvanized
-														Sheet</a></li>
-
-											</ul>
-										</li>
-										<li>
-											<a>Manufacturing Material <i class="fa fa-angle-right"></i></a>
-											<ul class="sub-menu">
-												<li><a href="composting-machine.html">Composting Machine</a></li>
-												<li><a href="stainless-steel-fabrication.html">Stainless Steel
-														Fabrication</a></li>
-												<li><a href="ms-fabrication.html">MS Fabrication</a></li>
-												<li><a href="ms-structure-fabrication.html">MS Structure Fabrication</a>
-												</li>
-												<li><a href="ms-base-frame-fabrication.html">MS Base Frame
-														Fabrication</a></li>
-												<li><a href="ms-tank-fabrication.html">MS Tank Fabrication</a></li>
-												<li><a href="ms-compact-fabrication.html">MS Compact Fabrication</a>
-												</li>
-												<li><a href="ss-tank-fabrication.html">SS Tank Fabrication</a></li>
-
-											</ul>
-										</li>
-										<li><a>Laser Cutting<i class="fa fa-angle-right"></i></a>
-											<ul class="sub-menu">
-												<li><a href="ms-laser-cutting.html">MS Laser Cutting</a></li>
-												<li><a href="ss-laser-cutting.html">SS Laser Cutting</a></li>
-												<li><a href="laser-cutting-machine.html">Laser Cutting</a></li>
-											</ul>
-										</li>
-										<li><a href="featured-products.html">Feature Products</a></li>
-									</ul>
-								</li>
-								<li> <a href="#">Gallery <i class="fa fa-chevron-down"></i> </a>
-									<ul class="sub-menu tab-content">
-										<li><a href="image.gallary.html">Image Gallery</a></li>
-										<li><a href="video-gallary.html">Video Gallery</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="career.html">Career</a>
-								</li>
-								<li>
-									<a href="contact.html">Contact Us</a>
-								</li>
-							</ul>
-							<a class="site-button m-3 m-r10 m-b10 btnhover20 d-none d-sm-block"
-								data-toggle="modal" data-target="#exampleModal">Enquire Now</a>
 						</div>
+
+						<div class="submenu-item has-sub-submenu" data-sub-submenu="category-b">
+							<a href="#" class="submenu-item-link"
+								style="text-decoration: none; color: inherit;">Manufacturing Material</a>
+							<div class="sub-submenu">
+								<a href="composting-machine.html" class="sub-submenu-item">Composting-Machine</a>
+								<a href="stainless-steel-fabrication.html"
+									class="sub-submenu-item">Stainless-Steel-Fabrication</a>
+								<a href="ms-fabrication.html" class="sub-submenu-item">Ms-Fabrication</a>
+								<a href="ms-structure-fabrication.html"
+									class="sub-submenu-item">Ms-Structure-Fabrication</a>
+								<a href="ms-base-frame-fabrication.html"
+									class="sub-submenu-item">Ms-Base-Frame-Fabrication</a>
+								<a href="ms-tank-fabrication.html" class="sub-submenu-item">Ms-Tank-Fabrication</a>
+								<a href="ms-compact-fabrication.html"
+									class="sub-submenu-item">Ms-Compact-Fabrication</a>
+								<a href="ss-tank-fabrication.html" class="sub-submenu-item">Ss-Tank-Fabrication</a>
+							</div>
+						</div>
+
+						<div class="submenu-item has-sub-submenu" data-sub-submenu="category-c">
+							<a href="#" class="submenu-item-link" style="text-decoration: none; color: inherit;">Laser
+								Cutting</a>
+							<div class="sub-submenu">
+								<a href="ms-laser-cutting.html" class="sub-submenu-item">MS-Laser-Cutting</a>
+								<a href="ss-laser-cutting.html" class="sub-submenu-item">SS-Laser-Cutting</a>
+								<a href="laser-cutting-machine.html" class="sub-submenu-item">Laser-Cutting</a>
+							</div>
+						</div>
+
+						<a href="featured-products.html" class="submenu-item" style="text-decoration: none;">Feature
+							Products</a>
 					</div>
 				</div>
-			</div>
-			<!-- main header END -->
-		</header>
+
+				<div class="sidebar-item has-submenu" data-submenu="solutions">
+					<a href="gallery.html" class="sidebar-link" style="color: inherit; text-decoration: none;"><i
+							class="fas fa-image"></i>Gallery</a>
+					<div class="submenu">
+						<a href="image.gallary.html" class="submenu-item" style="text-decoration: none;">Image
+							Gallery</a>
+						<a href="video-gallary.html" class="submenu-item" style="text-decoration: none; ">Video
+							Gallery</a>
+					</div>
+				</div>
+
+
+				<a href="career.html" class="sidebar-item"><i class="fas fa-briefcase"></i>Career</a>
+
+				<a href="#" class="sidebar-item customer-service"><i class="fas fa-headset"></i> Customer Service</a>
+				<div class="social-icons">
+					<a href="https://wa.me/+919156651186?text=I'm%20interested%20in"><i class="fab fa-whatsapp"></i></a>
+					<a href="https://www.facebook.com/excellentexports/"><i class="fab fa-facebook"></i></a>
+					<a href="https://www.linkedin.com/in/suyog-maske-46379614"><i class="fab fa-linkedin"></i></a>
+					<a href="https://www.instagram.com/excellentengineeringcompany/"><i
+							class="fab fa-instagram"></i></a>
+					<a href="https://www.youtube.com/channel/UCHK5dxTfl7aO5y91DqY8I7w"><i
+							class="fab fa-youtube"></i></a>
+				</div>
+			</nav>
+
+			<!-- Secondary Sidebars -->
+
+			<nav class="secondary-sidebar" id="About">
+				<a href="management.html" class="secondary-sidebar-item">Management</a>
+				<a href="certificate.html" class="secondary-sidebar-item">Certificate</a>
+			</nav>
+
+			<nav class="secondary-sidebar" id="products">
+				<a href="" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-a">Galvanized</a>
+				<a href="#" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-b">Manufacturing
+					Material</a>
+				<a href="#" class="secondary-sidebar-item has-sub-submenu" data-sub-submenu="category-c">Laser
+					Cutting</a>
+				<a href="#" class="secondary-sidebar-item">Feature Products</a>
+			</nav>
+
+			<nav class="secondary-sidebar" id="solutions">
+				<a href="image.gallary.html" class="secondary-sidebar-item">Image Gallery</a>
+				<a href="video-gallary.html" class="secondary-sidebar-item"> Video Gallery</a>
+			</nav>
+
+			<!-- Tertiary Sidebar -->
+			<nav class="tertiary-sidebar" id="category-a">
+				<a href="galvanized-coil.html" class="tertiary-sidebar-item">Galvanized-Coil</a>
+				<a href="galvanized-corrugated-sheet.html" class="tertiary-sidebar-item">Galvanized-Corrugated-Sheet</a>
+				<a href="pre-painted-galvanized-sheet.html"
+					class="tertiary-sidebar-item">Pre-Painted-Galvanized-Sheet</a>
+			</nav>
+
+			<nav class="tertiary-sidebar" id="category-b">
+				<a href="composting-machine.html" class="tertiary-sidebar-item">Composting-Machine</a>
+				<a href="stainless-steel-fabrication.html" class="tertiary-sidebar-item">Stainless-Steel-Fabrication</a>
+				<a href="ms-fabrication.html" class="tertiary-sidebar-item">Ms-Fabrication</a>
+				<a href="ms-structure-fabrication.html" class="tertiary-sidebar-item">Ms-Structure-Fabrication</a>
+				<a href="ms-base-frame-fabrication.html" class="tertiary-sidebar-item">Ms-Base-Frame-Fabrication</a>
+				<a href="ms-tank-fabrication.html" class="tertiary-sidebar-item">Ms-Tank-Fabrication</a>
+				<a href="ms-compact-fabrication.html" class="tertiary-sidebar-item">Ms-Compact-Fabrication</a>
+				<a href="ss-tank-fabrication.html" class="tertiary-sidebar-item">Ss-Tank-Fabrication</a>
+			</nav>
+
+			<nav class="tertiary-sidebar" id="category-c">
+				<a href="ms-laser-cutting.html" class="tertiary-sidebar-item">MS-Laser-Cutting</a>
+				<a href="ss-laser-cutting.html" class="tertiary-sidebar-item">SS-Laser-Cutting</a>
+				<a href="laser-cutting-machine.html" class="tertiary-sidebar-item">Laser-Cutting</a>
+			</nav>
+
+
+
+			<script>
+				// Font Awesome for icons
+				const fontAwesome = document.createElement('link');
+				fontAwesome.rel = 'stylesheet';
+				fontAwesome.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css';
+				document.head.appendChild(fontAwesome);
+
+				// Initialize Google Translate
+				function googleTranslateElementInit() {
+					new google.translate.TranslateElement({
+						pageLanguage: 'en', // Default language
+						includedLanguages: 'en,es,de,it,ar,zh-CN,ja', // Supported languages
+						layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+					}, 'google_translate_element');
+				}
+
+				// Load Google Translate Script
+				const translateScript = document.createElement('script');
+				translateScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+				document.head.appendChild(translateScript);
+
+				// Handle Language Selection
+				document.getElementById('language-select').addEventListener('change', (e) => {
+					const selectedLang = e.target.value;
+
+					if (selectedLang) {
+						const googleCombo = document.querySelector('.goog-te-combo');
+						if (googleCombo) {
+							googleCombo.value = selectedLang;
+							googleCombo.dispatchEvent(new Event('change'));
+						} else {
+							alert("Google Translate widget not loaded. Please refresh the page.");
+						}
+					}
+				});
+
+
+				// Sidebar toggle for mobile
+				const hamburger = document.querySelector('.hamburger');
+				const sidebar = document.querySelector('.sidebar');
+
+				hamburger.addEventListener('click', () => {
+					sidebar.classList.toggle('active');
+				});
+
+				// Close sidebar when clicking outside on mobile
+				document.addEventListener('click', (e) => {
+					if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+						sidebar.classList.remove('active');
+						document.querySelectorAll('.has-submenu, .has-sub-submenu').forEach(item => {
+							item.classList.remove('active');
+						});
+					}
+				});
+
+				// Submenu toggle for mobile
+				const hasSubmenus = document.querySelectorAll('.has-submenu .sidebar-link');
+				hasSubmenus.forEach(link => {
+					link.addEventListener('click', (e) => {
+						if (window.innerWidth <= 768) {
+							e.preventDefault();
+							const parent = link.parentElement;
+							parent.classList.toggle('active');
+						}
+					});
+				});
+
+				// Sub-submenu toggle for mobile
+				const hasSubSubmenus = document.querySelectorAll('.has-sub-submenu .submenu-item-link');
+				hasSubSubmenus.forEach(link => {
+					link.addEventListener('click', (e) => {
+						if (window.innerWidth <= 768) {
+							e.preventDefault();
+							const parent = link.parentElement;
+							parent.classList.toggle('active');
+						}
+					});
+				});
+
+				// Debounce utility
+				function debounce(func, wait) {
+					let timeout;
+					return function (...args) {
+						clearTimeout(timeout);
+						timeout = setTimeout(() => func.apply(this, args), wait);
+					};
+				}
+
+				// Hover trigger for desktop sidebar
+				document.addEventListener('mousemove', debounce((e) => {
+					if (window.innerWidth > 768) {
+						const sidebarWidth = 40;
+						if (e.clientX <= sidebarWidth && !sidebar.classList.contains('active')) {
+							sidebar.classList.add('active');
+							document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+								s.classList.remove('active');
+							});
+						} else if (e.clientX > 670 && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !e.target.closest('.secondary-sidebar') && !e.target.closest('.tertiary-sidebar')) {
+							sidebar.classList.remove('active');
+							document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+								s.classList.remove('active');
+							});
+						}
+					}
+				}, 10));
+
+				// Secondary sidebar hover logic with dynamic positioning
+				const hasSubmenuItems = document.querySelectorAll('.has-submenu');
+				hasSubmenuItems.forEach(item => {
+					item.addEventListener('mouseenter', () => {
+						if (window.innerWidth > 768) {
+							const submenuId = item.getAttribute('data-submenu');
+							document.querySelectorAll('.secondary-sidebar, .tertiary-sidebar').forEach(s => {
+								s.classList.remove('active');
+							});
+							const secondarySidebar = document.getElementById(submenuId);
+							if (secondarySidebar) {
+								const itemRect = item.getBoundingClientRect();
+								const headerHeight = document.querySelector('.header').offsetHeight;
+								const viewportHeight = window.innerHeight;
+								let topPosition = itemRect.top + window.scrollY - headerHeight;
+								topPosition = Math.max(80, Math.min(topPosition, viewportHeight - secondarySidebar.offsetHeight - 20));
+								secondarySidebar.style.top = `${topPosition}px`;
+								secondarySidebar.classList.add('active');
+								sidebar.classList.add('active');
+							}
+						}
+					});
+
+					item.addEventListener('mouseleave', (e) => {
+						if (window.innerWidth > 768) {
+							const submenuId = item.getAttribute('data-submenu');
+							const secondarySidebar = document.getElementById(submenuId);
+							if (secondarySidebar && !e.relatedTarget.closest(`#${submenuId}`) && !e.relatedTarget.closest('.tertiary-sidebar')) {
+								secondarySidebar.classList.remove('active');
+							}
+						}
+					});
+				});
+
+				// Tertiary sidebar hover logic with dynamic positioning
+				const hasSubSubmenuItems = document.querySelectorAll('.has-sub-submenu');
+				hasSubSubmenuItems.forEach(item => {
+					item.addEventListener('mouseenter', () => {
+						if (window.innerWidth > 768) {
+							const subSubmenuId = item.getAttribute('data-sub-submenu');
+							document.querySelectorAll('.tertiary-sidebar').forEach(s => {
+								s.classList.remove('active');
+							});
+							const tertiarySidebar = document.getElementById(subSubmenuId);
+							if (tertiarySidebar) {
+								const itemRect = item.getBoundingClientRect();
+								const headerHeight = document.querySelector('.header').offsetHeight;
+								const viewportHeight = window.innerHeight;
+								let topPosition = itemRect.top + window.scrollY - headerHeight;
+								topPosition = Math.max(80, Math.min(topPosition, viewportHeight - tertiarySidebar.offsetHeight - 20));
+								tertiarySidebar.style.top = `${topPosition}px`;
+								tertiarySidebar.classList.add('active');
+								const parentSecondary = item.closest('.secondary-sidebar');
+								if (parentSecondary) {
+									parentSecondary.classList.add('active');
+								}
+								sidebar.classList.add('active');
+							}
+						}
+					});
+
+					item.addEventListener('mouseleave', (e) => {
+						if (window.innerWidth > 768) {
+							const subSubmenuId = item.getAttribute('data-sub-submenu');
+							const tertiarySidebar = document.getElementById(subSubmenuId);
+							if (tertiarySidebar && !e.relatedTarget.closest(`#${subSubmenuId}`)) {
+								tertiarySidebar.classList.remove('active');
+							}
+						}
+					});
+				});
+
+				// Keep secondary and tertiary sidebars open when hovering
+				document.querySelectorAll('.secondary-sidebar').forEach(secSidebar => {
+					secSidebar.addEventListener('mouseenter', () => {
+						if (window.innerWidth > 768) {
+							secSidebar.classList.add('active');
+							sidebar.classList.add('active');
+						}
+					});
+					secSidebar.addEventListener('mouseleave', (e) => {
+						if (window.innerWidth > 768) {
+							const relatedTarget = e.relatedTarget;
+							const submenuId = secSidebar.id;
+							const parentItem = document.querySelector(`.has-submenu[data-submenu="${submenuId}"]`);
+							if (!relatedTarget.closest(`#${submenuId}`) && !relatedTarget.closest('.tertiary-sidebar') && !parentItem.contains(relatedTarget)) {
+								secSidebar.classList.remove('active');
+							}
+						}
+					});
+				});
+
+				document.querySelectorAll('.tertiary-sidebar').forEach(terSidebar => {
+					terSidebar.addEventListener('mouseenter', () => {
+						if (window.innerWidth > 768) {
+							terSidebar.classList.add('active');
+							const subSubmenuId = terSidebar.id;
+							const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+							const parentSecondary = parentItem ? parentItem.closest('.secondary-sidebar') : null;
+							if (parentSecondary) {
+								parentSecondary.classList.add('active');
+							}
+							sidebar.classList.add('active');
+						}
+					});
+					secSidebar.addEventListener('mouseleave', (e) => {
+						if (window.innerWidth > 768) {
+							const relatedTarget = e.relatedTarget;
+							const submenuId = secSidebar.id;
+							const parentItem = document.querySelector(`.has-submenu[data-submenu="${submenuId}"]`);
+							if (!relatedTarget.closest(`#${submenuId}`) && !relatedTarget.closest('.tertiary-sidebar') && !parentItem.contains(relatedTarget)) {
+								secSidebar.classList.remove('active');
+							}
+						}
+					});
+				});
+
+				document.querySelectorAll('.tertiary-sidebar').forEach(terSidebar => {
+					terSidebar.addEventListener('mouseenter', () => {
+						if (window.innerWidth > 768) {
+							terSidebar.classList.add('active');
+							const subSubmenuId = terSidebar.id;
+							const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+							const parentSecondary = parentItem ? parentItem.closest('.secondary-sidebar') : null;
+							if (parentSecondary) {
+								parentSecondary.classList.add('active');
+							}
+							sidebar.classList.add('active');
+						}
+					});
+					terSidebar.addEventListener('mouseleave', (e) => {
+						if (window.innerWidth > 768) {
+							const relatedTarget = e.relatedTarget;
+							const subSubmenuId = terSidebar.id;
+							const parentItem = document.querySelector(`.has-sub-submenu[data-sub-submenu="${subSubmenuId}"]`);
+							if (!relatedTarget.closest(`#${subSubmenuId}`) && !parentItem.contains(relatedTarget)) {
+								terSidebar.classList.remove('active');
+							}
+						}
+					});
+				});
+			</script>
+		</span>
+
 
 		<!-- Content -->
-		<div class="page-content bg-white">
+		<div class="page-content bg-white" style="margin-top: 120px;">
 			<!-- inner page banner -->
 			<div class="dlab-bnr-inr bg-pt">
 				<div class="auto-container bg-cont">
@@ -1532,88 +1885,95 @@
 					</div>
 				</div>
 			</div>
-			<div class="sticky-icon">
-				<a href="https://www.facebook.com/excellentexports/" class="Facebook"><i class="fa fa-facebook-f"> </i> Facebook </a>
-				<a href="https://www.youtube.com/channel/UCHK5dxTfl7aO5y91DqY8I7w" class="Youtube"><i class="fa fa-youtube"></i> Youtube </a>
-				<a href="https://www.linkedin.com/in/suyog-maske-46379614" class="Twitter"><i class="fa fa-linkedin"> </i> Linkedin </a>   
-				<a href="https://www.instagram.com/excellentengineeringcompany/" class="Instagram"><i class="fa fa-instagram"> </i> Instagram </a>
-			</div>
-		<!-- Footer -->
-		<footer class="site-footer">
-			<div class="footer-top" style="background-image:url(images/background/bg3.png); background-size: cover;">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3 col-sm-12 footer-col-4 ft">
-							<div class="widget widget_getintuch widget1">
 
-								<img src="images/eec3.png" alt="Excellent Engineering">
-								<hr>
-							</div>
+
+
+		<!-- New Footer Section -->
+		<footer class="ra-footer">
+			<div class="ra-footer-container">
+				<div class="ra-footer-content">
+					<!-- Company Information Section -->
+					<div class="ra-footer-section">
+						<!-- <div class="ra-logo">RA</div> -->
+						<h3>Excellent Engineering Company</h3>
+						<div class="ra-company-info">
+							<p style="font-weight: 500;">Sr.No. 38/2/20, <br> Narhe Industrial Zone, Pune,
+								Maharashtra,  India, 411041</p>
 						</div>
-						<div class="col-md-5 col-sm-12 footer-col-4">
-							<div class="widget widget_getintuch">
-								<h5 class="footer-title">Contact us</h5>
-								<ul>
-									<li><i class="ti-location-pin"></i><strong>address</strong> Sr.No.38/2/20,
-										Beside Pari Robotics, Narhe Industrial Zone, Narhe Dhayari Road, Pune,
-										Maharashtra, India 411041.</li>
-									<li><i class="ti-mobile"></i><strong>phone</strong>(+91-8237185786) /
-										(+91-9730978787)</li>
-									<li><i class="ti-email"></i><strong>email</strong>
-									    sales@excellentengineering.co.in
-									</li>
-								</ul>
-							</div>
+					</div>
+
+					<!-- Regional Websites Section -->
+					<div class="ra-footer-section">
+						<h3>Important Links</h3>
+						<a href="about.html" style="font-weight: 500;">About us</a> &nbsp; &nbsp; <a
+							href="galvanized-coil.html" style="font-weight: 500;">Galvanized</a> <br>
+						<a href="location.html" style="font-weight: 500;">Location</a> &nbsp; &nbsp; <a
+							href="composting-machine.html" style="font-weight: 500;">Manufacturing Material</a> <br>
+						<a href="customer.html" style="font-weight: 500;">Client</a> &nbsp; &nbsp; &nbsp; &nbsp; <a
+							href="ms-laser-cutting.html" style="font-weight: 500;">Laser Cutting</a><br>
+						<a href="gallery.html" style="font-weight: 500;">Gallery</a> &nbsp; &nbsp; &nbsp; &nbsp;<a
+							href="featured-products.html" style="font-weight: 500;">Feature Products</a> <br>
+						<a href="career.html" style="font-weight: 500;">Career</a>
+					</div>
+
+					<!-- Useful Information Section -->
+					<div class="ra-footer-section">
+						<h3>Useful Information</h3>
+						<p style="font-weight: 500; text-align: justify;">Excellent Engineering is a leading name in
+							manufacturing, offering top services like
+							Corrugated Roofing Sheets, Galvanized Coils, Fabrication, and Laser Cutting. With rich
+							experience and overseas expansion, we ensure quality and client satisfaction.</p>
+						<!-- <div style="margin-top: 1.5rem;">
+						<h3 style="margin-bottom: 0.5rem;">T&C</h3>
+						<a href="#">Privacy Policy</a>
+					</div>
+
+					<div style="margin-top: 1.5rem;">
+						<a href="#">RA Group PLC Annual Report</a>
+					</div>
+
+					<div style="margin-top: 1.5rem;">
+						<a href="#">Speak Up</a>
+					</div> -->
+					</div>
+
+					<!-- Contact Information Section -->
+					<div class="ra-footer-section">
+						<h3>Contact Information</h3>
+						<div class="ra-contact-item">
+							<i class="fas fa-phone ra-contact-icon"></i>
+							<a href="tel:8237185786" style="font-weight: 500;">+91-8237185786</a>, <a
+								href="tel:9730978787" style="font-weight: 500;">+91-9730978787</a>
+
+						</div>
+						<div class="ra-contact-item">
+							<i class="fas fa-envelope ra-contact-icon"></i>
+							<a href="mailto:sales@excellentengineering.co.in"
+								style="font-weight: 500;">sales@excellentengineering.co.in</a>
 						</div>
 
-						<div class="col-md-3 col-sm-12 footer-col-4">
-							<div class="footer-bottom-social">
-								<h5 class="footer-title">Get in Touch</h5>
-								<ul class="dlab-social-icon social dez-border">
-									<a href="https://www.facebook.com/excellentexports/">
-										<li><img src="images/icon/fb.png" width="20%" alt="social media"></li>
-									</a>
-									<a href="https://www.instagram.com/excellentengineeringcompany/">
-										<li><img src="images/icon/instagram.png" width="20%" alt="social media"></li>
-									</a>
-									<a href="https://www.linkedin.com/in/suyog-maske-46379614">
-										<li><img src="images/icon/linkedin.png" width="20%" alt="social media"></li>
-									</a>
-									<a href="https://www.youtube.com/channel/UCHK5dxTfl7aO5y91DqY8I7w">
-										<li><img src="images/icon/youtube.png" width="20%" alt="Social Media"></li>
-									</a>
-								</ul>
-							</div>
+						<div class="ra-social-links" style="margin-top: 1.5rem;">
+							<a href="https://wa.me/9156651186" class="ra-social-link" target="_blank">
+								<i class="fab fa-whatsapp ra-social-icon" style="font-weight: 500;"></i>
+								WhatsApp
+							</a>
 						</div>
-
 					</div>
 				</div>
 			</div>
 
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12 pad-left_zero pad-right_zero">
-							<p class="text-center pt-2 text-white">
-								Copyright
-								<script>
-									document.write(new Date().getFullYear());
-
-								</script>
-								© Excellent Engineering Company. All Right Reserve Design & Developed By <a
-									href="https://netcom-india.com/">NetCom Business Solutions Pvt Ltd</a>
-							</p>
-						</div>
-
-					</div>
+			<!-- Copyright Strip -->
+			<div class="ra-copyright-strip">
+				<div class="ra-copyright-container">
+					<p>Copyright 2025 © Excellent Engineering Company. All Right Reserve Design & Developed By <a
+							href="https://www.netcom-india.com/" class="ra-developer-link">NetCom Business Solutions
+							Pvt Ltd.</a></p>
 				</div>
 			</div>
 		</footer>
 		<!-- Footer End -->
 
-		<ul class="social1">
-			<li><a href="https://wa.me/+919156651186?text=I'm%20interested%20in"><i class="fa fa-whatsapp"></i></a></li>
-		</ul>
+>
 
 		<button class="scroltop fa fa-chevron-up"></button>
 	</div>
