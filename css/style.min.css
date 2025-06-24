@@ -12320,7 +12320,7 @@ footer p a {
 
 footer a,
 footer a:visited {
-    color: #b0b0b0;
+    color: white;
 }
 
 footer p a {
@@ -16143,54 +16143,40 @@ th {
     color: white !important;
 }
 
-/* ------------- top strap -------------- */
-.top-strap {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1055;
-    background-color: #B38A3B;
-    color: white;
-    padding: 10px 0;
-    font-size: 0.9rem;
-}
 
-.top-strap a {
-    color: white;
-    text-decoration: none;
-}
-
-.top-strap a:hover {
-    color: #82B104;
-}
-
-.navbar {
-    margin-top: 60px;
-    /* Adjust to avoid overlap with the strap */
-}
-
-@media (max-width: 1200px) {
-    /* .top-strap {
-        display: none !important;
-    }
-
-    .main-bar {
-        margin-top: 0px !important;
-    } */
-
-
-    .sticky-header .contact-info,
-    .sticky-header .social-icons {
-        display: none !important;
-    }
-}
 
 
 /* ---------------------- new navbar ------------------------------- */
 
 
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* font-family: Arial, sans-serif; */
+    margin: 20px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.language-selector i {
+    font-size: 20px;
+    color: #333;
+}
+
+#google_translate_element {
+    display: none; /* Keep hidden to use custom dropdown */
+}
+
+
+
 /* RTL Support for Arabic */
-html[lang="ar"] {
+/* html[lang="ar"] {
     direction: rtl;
     text-align: right;
 }
@@ -16218,10 +16204,10 @@ html[lang="ar"] .has-sub-submenu .secondary-sidebar-item::after {
 html[lang="ar"] .has-submenu:hover .sidebar-link::after,
 html[lang="ar"] .has-sub-submenu:hover .secondary-sidebar-item::after {
     transform: translateX(5px);
-}
+}  */
 
 /* Font Assignments for Languages */
-html[lang="zh-CN"] body,
+/* html[lang="zh-CN"] body,
 html[lang="zh-CN"] .sidebar-item,
 html[lang="zh-CN"] .secondary-sidebar-item,
 html[lang="zh-CN"] .tertiary-sidebar-item,
@@ -16243,7 +16229,13 @@ html[lang="ar"] .secondary-sidebar-item,
 html[lang="ar"] .tertiary-sidebar-item,
 html[lang="ar"] .language-selector select {
     font-family: 'Amiri', serif;
-}
+}  */
+
+
+
+
+
+
 
 /* Top Header Bar */
 .header {
@@ -16251,7 +16243,7 @@ html[lang="ar"] .language-selector select {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #ffffff;
+    background-color: rgb(74, 55, 40);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -16652,7 +16644,7 @@ html[lang="ar"] .language-selector select {
     display: none;
     font-size: 26px;
     cursor: pointer;
-    color: #333;
+    color: white;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -16694,7 +16686,7 @@ html[lang="ar"] .language-selector select {
         width: 100%;
         max-width: 300px;
         max-height: calc(100vh - 80px);
-        overflow-y: auto;
+        overflow-y: hidden;        /*auto*/
         -webkit-overflow-scrolling: touch;
     }
 
@@ -16836,9 +16828,273 @@ html[lang="ar"] .language-selector select {
 
 
 
-@media only screen and (max-width: 1028px) {
+/* @media only screen and (max-width: 1028px) {
     .video_bgg {
         margin-top: 100px !important;
     }
 
+} */
+
+
+/* Show the logo by default */
+.mobilelogo {
+    display: block;
+}
+
+/* Hide the logo on screens larger than 600px */
+@media (min-width: 601px) {
+    .mobilelogo {
+        display: none;
+    }
+}
+
+/* Show the logo by default */
+.pclogo {
+    display: block;
+}
+
+/* Hide the logo only on screens smaller than 600px */
+@media (max-width: 600px) {
+    .pclogo {
+        display: none;
+    }
+}
+
+
+/* --------New Footer ---------------- */
+
+.demo-main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.ra-footer {
+    background-color: #4a3728;
+    color: #ffffff;
+    padding: 3rem 0 2rem 0;
+}
+
+.ra-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.ra-footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.ra-footer-section h3 {
+    color: #B38A3B;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.ra-footer-section p,
+.ra-footer-section a {
+    color: #ffffff;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-decoration: none;
+    /* display: block; */
+    margin-bottom: 0.5rem;
+}
+
+.ra-footer-section a:hover {
+    color: #B38A3B;
+    transition: color 0.3s ease;
+}
+
+.ra-logo {
+    width: 60px;
+    height: 60px;
+    background-color: #B38A3B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4a3728;
+}
+
+.ra-company-info {
+    margin-bottom: 1.5rem;
+}
+
+.ra-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.ra-contact-icon {
+    font-size: 1rem;
+    margin-right: 0.8rem;
+    width: 18px;
+    color: #B38A3B;
+    text-align: center;
+}
+
+.ra-contact-item a {
+    margin-bottom: 0;
+}
+
+.ra-social-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem !important;
+    transition: color 0.3s ease;
+}
+
+.ra-social-link:hover {
+    color: #B38A3B !important;
+}
+
+.ra-social-link:hover .ra-social-icon {
+    color:#B38A3B;
+}
+
+.ra-social-icon {
+    font-size: 1.1rem;
+    margin-right: 0.8rem;
+    width: 20px;
+    color: #ffffff;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.ra-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 1rem;
+}
+
+.ra-social-links a {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .ra-footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    
+    .ra-footer-container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ra-footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .ra-footer {
+        padding: 2rem 0 1.5rem 0;
+    }
+    
+    .ra-footer-section h3 {
+        font-size: 1rem;
+    }
+    
+    .ra-footer-section p,
+    .ra-footer-section a {
+        font-size: 0.9rem;
+    }
+    
+    .ra-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .ra-footer-container {
+        padding: 0 0.5rem;
+    }
+    
+    .ra-footer-section p,
+    .ra-footer-section a {
+        font-size: 0.8rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .ra-footer-content {
+        gap: 3rem;
+    }
+}
+
+/* Copyright Strip Styles */
+.ra-copyright-strip {
+    background-color: #2c1e12;
+    border-top: 1px solid #5a4a3a;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+.ra-copyright-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.ra-copyright-strip p {
+    color: #cccccc;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ra-developer-link {
+    color: #CCCCCC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.ra-developer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness for copyright */
+@media (max-width: 768px) {
+    .ra-copyright-container {
+        padding: 0 1rem;
+    }
+    
+    .ra-copyright-strip p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .ra-copyright-strip p {
+        font-size: 0.7rem;
+    }
+    
+    .ra-copyright-container {
+        padding: 0 0.5rem;
+    }
 }
